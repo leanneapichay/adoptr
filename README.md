@@ -1,2 +1,3 @@
-# adoptr
-CS Final Project App
+Adoptr
+
+Created by Leanne Pichay and Andrew Song
