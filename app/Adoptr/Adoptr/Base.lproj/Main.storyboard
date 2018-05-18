@@ -68,13 +68,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-Xt-VtD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-Xt-VtD" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhY-bQ-WHv">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhY-bQ-WHv" userLabel="ContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <color key="backgroundColor" red="0.019607843140000001" green="0.1137254902" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-BE-WQ6">
@@ -170,6 +170,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LtP-hu-Qeg"/>
-        <segue reference="JPS-cG-yGi"/>
+        <segue reference="Oea-OR-7mc"/>
     </inferredMetricsTieBreakers>
 </document>
