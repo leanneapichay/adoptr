@@ -18,6 +18,8 @@
 		B8AA6F3820AEA172004F4905 /* iconC.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3720AEA172004F4905 /* iconC.png */; };
 		B8AA6F3A20AEA290004F4905 /* signIn.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3920AEA290004F4905 /* signIn.png */; };
 		B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F3B20AF2114004F4905 /* PageViewController.swift */; };
+		B8AA6F3E20AF3917004F4905 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3D20AF3916004F4905 /* signUp.png */; };
+		B8AA6F4820AF5FE2004F4905 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F4720AF5FE2004F4905 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B8AA6F3720AEA172004F4905 /* iconC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconC.png; path = "../../../../../School/CompSci/Adoptr Icon/iconC.png"; sourceTree = "<group>"; };
 		B8AA6F3920AEA290004F4905 /* signIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signIn.png; path = ../../../../../../Downloads/signIn.png; sourceTree = "<group>"; };
 		B8AA6F3B20AF2114004F4905 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		B8AA6F3D20AF3916004F4905 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUp.png; path = ../../../../../../Downloads/signUp.png; sourceTree = "<group>"; };
+		B8AA6F4720AF5FE2004F4905 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */,
 				B8AA6F0620AE88A2004F4905 /* ViewController.swift */,
 				B8AA6F3B20AF2114004F4905 /* PageViewController.swift */,
+				B8AA6F4720AF5FE2004F4905 /* SignUpViewController.swift */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -138,6 +143,7 @@
 		B8AA6F3220AE9B7E004F4905 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B8AA6F3D20AF3916004F4905 /* signUp.png */,
 				B8AA6F3920AEA290004F4905 /* signIn.png */,
 				B8AA6F3720AEA172004F4905 /* iconC.png */,
 				B8AA6F3320AE9B9E004F4905 /* iconC w title.png */,
@@ -249,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AA6F3E20AF3917004F4905 /* signUp.png in Resources */,
 				B8AA6F0F20AE88A6004F4905 /* LaunchScreen.storyboard in Resources */,
 				B8AA6F3420AE9B9E004F4905 /* iconC w title.png in Resources */,
 				B8AA6F3A20AEA290004F4905 /* signIn.png in Resources */,
@@ -281,6 +288,7 @@
 			files = (
 				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
+				B8AA6F4820AF5FE2004F4905 /* SignUpViewController.swift in Sources */,
 				B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
