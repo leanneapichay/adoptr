@@ -14,6 +14,7 @@
 		B8AA6F0F20AE88A6004F4905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */; };
 		B8AA6F1A20AE88A6004F4905 /* AdoptrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F1920AE88A6004F4905 /* AdoptrTests.swift */; };
 		B8AA6F2520AE88A6004F4905 /* AdoptrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F2420AE88A6004F4905 /* AdoptrUITests.swift */; };
+		B8AA6F3420AE9B9E004F4905 /* iconC w title.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3320AE9B9E004F4905 /* iconC w title.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B8AA6F2020AE88A6004F4905 /* AdoptrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdoptrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F2420AE88A6004F4905 /* AdoptrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptrUITests.swift; sourceTree = "<group>"; };
 		B8AA6F2620AE88A6004F4905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AA6F3320AE9B9E004F4905 /* iconC w title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconC w title.png"; path = "../../../../../School/CompSci/Adoptr Icon/iconC w title.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		B8AA6F0320AE88A2004F4905 /* Adoptr */ = {
 			isa = PBXGroup;
 			children = (
+				B8AA6F3220AE9B7E004F4905 /* Images */,
 				B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */,
 				B8AA6F0620AE88A2004F4905 /* ViewController.swift */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				B8AA6F2620AE88A6004F4905 /* Info.plist */,
 			);
 			path = AdoptrUITests;
+			sourceTree = "<group>";
+		};
+		B8AA6F3220AE9B7E004F4905 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B8AA6F3320AE9B9E004F4905 /* iconC w title.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AA6F0F20AE88A6004F4905 /* LaunchScreen.storyboard in Resources */,
+				B8AA6F3420AE9B9E004F4905 /* iconC w title.png in Resources */,
 				B8AA6F0C20AE88A6004F4905 /* Assets.xcassets in Resources */,
 				B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */,
 			);
