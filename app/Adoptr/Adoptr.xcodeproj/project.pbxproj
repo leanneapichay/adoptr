@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B815F82E20B5BE66004F5943 /* AdoptingSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* AdoptingSignUpViewController.swift */; };
 		B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */; };
 		B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0620AE88A2004F4905 /* ViewController.swift */; };
 		B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0820AE88A2004F4905 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B815F82D20B5BE66004F5943 /* AdoptingSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptingSignUpViewController.swift; sourceTree = "<group>"; };
 		B8AA6F0120AE88A2004F4905 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AA6F0620AE88A2004F4905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +127,9 @@
 				B8AA6F3B20AF2114004F4905 /* PageViewController.swift */,
 				B8C157C020B3C21A005A9334 /* Accounts.swift */,
 				B8C157C820B4A2DF005A9334 /* LoginViewController.swift */,
-				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
+				B815F82D20B5BE66004F5943 /* AdoptingSignUpViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
+				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
 				B8AA6F1020AE88A6004F4905 /* Info.plist */,
 			);
@@ -307,6 +310,7 @@
 			files = (
 				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
+				B815F82E20B5BE66004F5943 /* AdoptingSignUpViewController.swift in Sources */,
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */,
@@ -491,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adoptr.Adoptr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -508,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adoptr.Adoptr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

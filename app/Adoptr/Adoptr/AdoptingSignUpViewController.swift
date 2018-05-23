@@ -1,28 +1,30 @@
 //
-//  LoginViewController.swift
+//  AdoptingSignUpViewController.swift
 //  Adoptr
 //
-//  Created by Leanne Pichay on 22/5/18.
+//  Created by Leanne Pichay on 23/5/18.
 //  Copyright © 2018 adoptr. All rights reserved.
 //
 
 import UIKit
 
+class AdoptingSignUpViewController: UIViewController {
 
-class LoginViewController: UIViewController {
+    @IBOutlet weak var BdayPicker: UIDatePicker!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        BdayPicker.setValue(UIColor.white, forKey: "textColor")
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    
     /*
     // MARK: - Navigation
 
