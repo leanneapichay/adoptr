@@ -1,14 +1,14 @@
 //
-//  SignInViewController.swift
+//  LoginViewController.swift
 //  Adoptr
 //
-//  Created by Leanne Pichay on 18/5/18.
+//  Created by Leanne Pichay on 22/5/18.
 //  Copyright © 2018 adoptr. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
