@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* SignUpViewController.swift */; };
 		B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */; };
 		B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0620AE88A2004F4905 /* ViewController.swift */; };
 		B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0820AE88A2004F4905 /* Main.storyboard */; };
@@ -14,6 +15,20 @@
 		B8AA6F0F20AE88A6004F4905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */; };
 		B8AA6F1A20AE88A6004F4905 /* AdoptrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F1920AE88A6004F4905 /* AdoptrTests.swift */; };
 		B8AA6F2520AE88A6004F4905 /* AdoptrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F2420AE88A6004F4905 /* AdoptrUITests.swift */; };
+		B8AA6F3420AE9B9E004F4905 /* iconC w title.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3320AE9B9E004F4905 /* iconC w title.png */; };
+		B8AA6F3820AEA172004F4905 /* iconC.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3720AEA172004F4905 /* iconC.png */; };
+		B8AA6F3A20AEA290004F4905 /* signIn.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3920AEA290004F4905 /* signIn.png */; };
+		B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F3B20AF2114004F4905 /* PageViewController.swift */; };
+		B8AA6F3E20AF3917004F4905 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F3D20AF3916004F4905 /* signUp.png */; };
+		B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C157C020B3C21A005A9334 /* Accounts.swift */; };
+		B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C157C820B4A2DF005A9334 /* LoginViewController.swift */; };
+		B8C157CB20B4B4B8005A9334 /* orangeSemi.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C157CA20B4B4B8005A9334 /* orangeSemi.png */; };
+		B8C157CD20B4B53D005A9334 /* orangeSemiInverted.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C157CC20B4B53D005A9334 /* orangeSemiInverted.png */; };
+		B8C157D020B4B713005A9334 /* whiteBox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8C157CE20B4B712005A9334 /* whiteBox.jpg */; };
+		B8C157D120B4B713005A9334 /* orangeBox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8C157CF20B4B713005A9334 /* orangeBox.jpg */; };
+		B8C4C8C120B5F7C500D5A9CB /* prints.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C4C8C020B5F7C400D5A9CB /* prints.png */; };
+		B8C4C8C320B6078700D5A9CB /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C4C8C220B6078700D5A9CB /* left.png */; };
+		B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B815F82D20B5BE66004F5943 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B8AA6F0120AE88A2004F4905 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AA6F0620AE88A2004F4905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +63,20 @@
 		B8AA6F2020AE88A6004F4905 /* AdoptrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdoptrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F2420AE88A6004F4905 /* AdoptrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptrUITests.swift; sourceTree = "<group>"; };
 		B8AA6F2620AE88A6004F4905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AA6F3320AE9B9E004F4905 /* iconC w title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconC w title.png"; path = "../../../../../School/CompSci/Adoptr Icon/iconC w title.png"; sourceTree = "<group>"; };
+		B8AA6F3720AEA172004F4905 /* iconC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconC.png; path = "../../../../../School/CompSci/Adoptr Icon/iconC.png"; sourceTree = "<group>"; };
+		B8AA6F3920AEA290004F4905 /* signIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signIn.png; path = ../../../../../../Downloads/signIn.png; sourceTree = "<group>"; };
+		B8AA6F3B20AF2114004F4905 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		B8AA6F3D20AF3916004F4905 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUp.png; path = ../../../../../../Downloads/signUp.png; sourceTree = "<group>"; };
+		B8C157C020B3C21A005A9334 /* Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
+		B8C157C820B4A2DF005A9334 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B8C157CA20B4B4B8005A9334 /* orangeSemi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orangeSemi.png; path = ../../../../../../Downloads/orangeSemi.png; sourceTree = "<group>"; };
+		B8C157CC20B4B53D005A9334 /* orangeSemiInverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orangeSemiInverted.png; path = ../../../../../../Downloads/orangeSemiInverted.png; sourceTree = "<group>"; };
+		B8C157CE20B4B712005A9334 /* whiteBox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = whiteBox.jpg; path = ../../../../../../Downloads/whiteBox.jpg; sourceTree = "<group>"; };
+		B8C157CF20B4B713005A9334 /* orangeBox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = orangeBox.jpg; path = ../../../../../../Downloads/orangeBox.jpg; sourceTree = "<group>"; };
+		B8C4C8C020B5F7C400D5A9CB /* prints.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prints.png; path = ../../../../../../Desktop/prints.png; sourceTree = "<group>"; };
+		B8C4C8C220B6078700D5A9CB /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = ../../../../../../Desktop/left.png; sourceTree = "<group>"; };
+		B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivingSignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +127,16 @@
 		B8AA6F0320AE88A2004F4905 /* Adoptr */ = {
 			isa = PBXGroup;
 			children = (
+				B8AA6F3220AE9B7E004F4905 /* Images */,
 				B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */,
 				B8AA6F0620AE88A2004F4905 /* ViewController.swift */,
-				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
+				B8AA6F3B20AF2114004F4905 /* PageViewController.swift */,
+				B8C157C020B3C21A005A9334 /* Accounts.swift */,
+				B8C157C820B4A2DF005A9334 /* LoginViewController.swift */,
+				B815F82D20B5BE66004F5943 /* SignUpViewController.swift */,
+				B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
+				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
 				B8AA6F1020AE88A6004F4905 /* Info.plist */,
 			);
@@ -123,6 +159,23 @@
 				B8AA6F2620AE88A6004F4905 /* Info.plist */,
 			);
 			path = AdoptrUITests;
+			sourceTree = "<group>";
+		};
+		B8AA6F3220AE9B7E004F4905 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B8C4C8C220B6078700D5A9CB /* left.png */,
+				B8C4C8C020B5F7C400D5A9CB /* prints.png */,
+				B8C157CF20B4B713005A9334 /* orangeBox.jpg */,
+				B8C157CE20B4B712005A9334 /* whiteBox.jpg */,
+				B8C157CC20B4B53D005A9334 /* orangeSemiInverted.png */,
+				B8C157CA20B4B4B8005A9334 /* orangeSemi.png */,
+				B8AA6F3D20AF3916004F4905 /* signUp.png */,
+				B8AA6F3920AEA290004F4905 /* signIn.png */,
+				B8AA6F3720AEA172004F4905 /* iconC.png */,
+				B8AA6F3320AE9B9E004F4905 /* iconC w title.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +282,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AA6F3E20AF3917004F4905 /* signUp.png in Resources */,
+				B8C4C8C120B5F7C500D5A9CB /* prints.png in Resources */,
 				B8AA6F0F20AE88A6004F4905 /* LaunchScreen.storyboard in Resources */,
+				B8AA6F3420AE9B9E004F4905 /* iconC w title.png in Resources */,
+				B8C157D120B4B713005A9334 /* orangeBox.jpg in Resources */,
+				B8C157CB20B4B4B8005A9334 /* orangeSemi.png in Resources */,
+				B8C4C8C320B6078700D5A9CB /* left.png in Resources */,
+				B8AA6F3A20AEA290004F4905 /* signIn.png in Resources */,
+				B8AA6F3820AEA172004F4905 /* iconC.png in Resources */,
+				B8C157CD20B4B53D005A9334 /* orangeSemiInverted.png in Resources */,
+				B8C157D020B4B713005A9334 /* whiteBox.jpg in Resources */,
 				B8AA6F0C20AE88A6004F4905 /* Assets.xcassets in Resources */,
 				B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */,
 			);
@@ -256,7 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
+				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
+				B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */,
+				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
+				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56W96PVPHU;
 				INFOPLIST_FILE = Adoptr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adoptr.Adoptr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56W96PVPHU;
 				INFOPLIST_FILE = Adoptr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adoptr.Adoptr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
