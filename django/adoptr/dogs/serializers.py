@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Dog
 
 
-class Dog(serializers.ModelSerializer):
+class DogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Dog
