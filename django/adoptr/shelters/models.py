@@ -5,4 +5,5 @@ class Shelter(models.Model):
     name = models.CharField(max_length=200)
     location = models.TextField()
     description = models.TextField()
+    zip = models.SmallIntegerField()
 
