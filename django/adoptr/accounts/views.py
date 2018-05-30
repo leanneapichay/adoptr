@@ -28,7 +28,19 @@ def login(request):
 @api_view(['POST'])
 def signup_adopter(request):
 
-    pass
+    email = request.data.get('email')
+    password = request.data.get('password')
+    first_name = request.data.get('first_name')
+    last_name = request.data.get('last_name')
+    zip_code = request.data.get('zip_code')
+    num_pets = request.data.get('num_pets')
+    birth_date = request.data.get('birth_date')
+    dog_size = request.data.get('dog_size')
+    dog_age = request.data.get('dog_age')
+    dog_traits = request.data.get('dog_traits')
+
+
+
 
 
 @api_view(['POST'])
