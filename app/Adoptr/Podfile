@@ -1,0 +1,19 @@
+platform :ios, '9.0'
+
+target 'Adoptr' do
+  use_frameworks!
+
+  # Pods for Adoptr
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+  target 'AdoptrTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AdoptrUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

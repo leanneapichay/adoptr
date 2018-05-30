@@ -54,7 +54,6 @@ class SignUpViewController: UIViewController {
         var data : [String : String ] = ["firstName": firstName!, "lastName" : lastName!, "birthdate" : birthdate, "email" : email!, "password" : password!]
         
         var acct: Acct = Acct(data)
-        static var nextBeenPressed: Boolean
     
     }
 

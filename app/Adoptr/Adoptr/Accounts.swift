@@ -22,11 +22,6 @@ public class Acct {
     }
 }
 
-struct AcctST{
-    static var acct: Acct
-    
-    
-}
 
 public class Adopting: Acct {
     
@@ -35,6 +30,3 @@ public class Adopting: Acct {
 public class Giving: Acct {
     
 }
-
-
-
