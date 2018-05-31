@@ -10,8 +10,8 @@ import UIKit
 
 class ListedPetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
-    let elements = ["pet1","pet2","pet3"]
+    // change this to an array of pets from alamofire
+    private let elements = ["pet1","pet2","pet3"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,7 +39,7 @@ class ListedPetsViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.cellView.layer.cornerRadius = (cell.cellView.frame.height / 2)
 
-        //cell.petName.text =
+        //cell.petName.text =           initialize with alamofire
         //cell.petImage.image =
         
         cell.petImage.layer.cornerRadius = (cell.petImage.frame.height/2)

@@ -10,6 +10,9 @@
 		78332BCD2C1E2A59A6CF60EB /* Pods_AdoptrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71342245DF05DD5280FBEE6A /* Pods_AdoptrUITests.framework */; };
 		A400DDA9DF8615F2F83E5A6F /* Pods_Adoptr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB8C11E6E1E5EA4C7FC14D3 /* Pods_Adoptr.framework */; };
 		B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* SignUpViewController.swift */; };
+		B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */; };
+		B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* MatchViewController.swift */; };
+		B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */; };
 		B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */; };
 		B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0620AE88A2004F4905 /* ViewController.swift */; };
 		B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0820AE88A2004F4905 /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 		735BD16112EA1B107CC9D03B /* Pods-Adoptr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adoptr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adoptr/Pods-Adoptr.debug.xcconfig"; sourceTree = "<group>"; };
 		A25FE76773799353132C9E50 /* Pods-AdoptrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdoptrUITests/Pods-AdoptrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B815F82D20B5BE66004F5943 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		B876F93420BFAC4200EB62CA /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreviewViewController.swift; sourceTree = "<group>"; };
 		B8AA6F0120AE88A2004F4905 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AA6F0620AE88A2004F4905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +169,9 @@
 				B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */,
 				B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */,
 				B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */,
+				B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */,
+				B876F93420BFAC4200EB62CA /* MatchViewController.swift */,
+				B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -401,6 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */,
+				B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */,
 				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
 				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
@@ -410,6 +421,7 @@
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */,
+				B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */,
 				B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
