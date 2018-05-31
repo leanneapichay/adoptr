@@ -22,6 +22,8 @@
 		B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C157C820B4A2DF005A9334 /* LoginViewController.swift */; };
 		B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */; };
 		B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */; };
+		B8F1E90B20BF46DC0043ED71 /* ListedPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */; };
+		B8F1E90E20BF4A0D0043ED71 /* ListedPetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */; };
 		BA1C21C24D5EEA50BD1F0BDA /* Pods_AdoptrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E3715995EEDA0C8B75AAE2 /* Pods_AdoptrTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		B8C157C820B4A2DF005A9334 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivingSignUpViewController.swift; sourceTree = "<group>"; };
 		B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedPetsViewController.swift; sourceTree = "<group>"; };
+		B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedPetViewCell.swift; sourceTree = "<group>"; };
 		C3E3715995EEDA0C8B75AAE2 /* Pods_AdoptrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdoptrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03AEE0A5A2AE9BF299E751F /* Pods-AdoptrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdoptrTests/Pods-AdoptrTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAB8C11E6E1E5EA4C7FC14D3 /* Pods_Adoptr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adoptr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,13 +154,15 @@
 			isa = PBXGroup;
 			children = (
 				B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */,
-				B8AA6F0620AE88A2004F4905 /* ViewController.swift */,
-				B8AA6F3B20AF2114004F4905 /* PageViewController.swift */,
 				B8C157C020B3C21A005A9334 /* Accounts.swift */,
 				B8C157C820B4A2DF005A9334 /* LoginViewController.swift */,
 				B815F82D20B5BE66004F5943 /* SignUpViewController.swift */,
 				B8C4C8C420B87A9100D5A9CB /* GivingSignUpViewController.swift */,
+				B8AA6F0620AE88A2004F4905 /* ViewController.swift */,
+				B8AA6F3B20AF2114004F4905 /* PageViewController.swift */,
 				B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */,
+				B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */,
+				B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -399,6 +405,8 @@
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
 				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
 				B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */,
+				B8F1E90B20BF46DC0043ED71 /* ListedPetsViewController.swift in Sources */,
+				B8F1E90E20BF4A0D0043ED71 /* ListedPetViewCell.swift in Sources */,
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */,
