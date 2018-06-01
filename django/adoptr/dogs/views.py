@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import DogSerializer
 from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 
 
 @api_view(['GET'])
@@ -41,7 +42,21 @@ def get_dog_info(request):
 @api_view(['POST'])
 def create_dog(request):
 
-    pass
+    name = request.data.get('name')
+    age = request.data.get('age')
+    des = request.data.get('description')
+    active = request.data.get('active')
+    trained = request.data.get('trained')
+    breed = request.data.get('breed')
+    shelter = request.data.get('shelter_id')
+
+    serializer = DogSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
