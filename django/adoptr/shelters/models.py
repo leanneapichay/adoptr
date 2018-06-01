@@ -7,3 +7,7 @@ class Shelter(models.Model):
     description = models.TextField()
     zip = models.SmallIntegerField()
 
+    def __str__(self):
+        return self.name + ' ' + self.zip
+
+
