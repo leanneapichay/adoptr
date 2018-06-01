@@ -4,7 +4,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import DogSerializer
 from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
 
 
 @api_view(['GET'])
@@ -47,6 +46,25 @@ def create_dog(request):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def edit_dog(request):
+
+    dog_id = request.data.get('id')
+
+    try:
+        dog = Dog.objects.get(id=dog_id)
+    except Dog.DoesNotExist:
+        return Response('Dog Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    serializer = DogSerializer(dog, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

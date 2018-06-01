@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378c91df-9a05-4e75-8cbc-8c38543887e4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adoptr/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adoptr/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/dogs/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dogs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dogs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dogs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelters/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelters/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,8 +29,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shelters/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="60">
+              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -69,8 +65,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dogs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="522">
+              <caret line="49" column="74" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -116,7 +112,6 @@
         <option value="$PROJECT_DIR$/adoptr/urls.py" />
         <option value="$PROJECT_DIR$/shelters/urls.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
-        <option value="$PROJECT_DIR$/shelters/serializers.py" />
         <option value="$PROJECT_DIR$/dogs/admin.py" />
         <option value="$PROJECT_DIR$/shelters/admin.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
@@ -129,6 +124,7 @@
         <option value="$PROJECT_DIR$/shelters/models.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/adoptr/settings.py" />
+        <option value="$PROJECT_DIR$/shelters/serializers.py" />
         <option value="$PROJECT_DIR$/dogs/views.py" />
       </list>
     </option>
@@ -331,7 +327,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527826265718</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="create dog fix">
+      <created>1527828511888</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1527828511888</updated>
+    </task>
+    <task id="LOCAL-00017" summary="deleted create/update and used default instead for dog/shelter serializers">
+      <created>1527828591581</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1527828591581</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -373,7 +383,9 @@
     <MESSAGE value="added update and create for dog serializer" />
     <MESSAGE value="custom user" />
     <MESSAGE value="alter dog model" />
-    <option name="LAST_COMMIT_MESSAGE" value="alter dog model" />
+    <MESSAGE value="create dog fix" />
+    <MESSAGE value="deleted create/update and used default instead for dog/shelter serializers" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted create/update and used default instead for dog/shelter serializers" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
@@ -750,16 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shelters/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -790,10 +792,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shelters/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dogs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        <state relative-caret-position="522">
+          <caret line="49" column="74" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
