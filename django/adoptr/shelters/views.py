@@ -34,3 +34,4 @@ def get_shelter(request):
 
     return Response(shelter_serializer.data, status=status.HTTP_200_OK)
 
+

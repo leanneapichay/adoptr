@@ -7,6 +7,8 @@ class Dog(models.Model):
     age = models.SmallIntegerField()
     breed = models.CharField(max_length=100)
     description = models.TextField()
+    active = models.SmallIntegerField()
+    trained = models.SmallIntegerField()
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
