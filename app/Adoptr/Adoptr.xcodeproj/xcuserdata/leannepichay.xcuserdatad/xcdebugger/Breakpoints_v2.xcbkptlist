@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Adoptr/Accounts.swift"
-            timestampString = "548972067.0783"
+            timestampString = "549578842.506526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36">
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "init(input:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Adoptr/Accounts.swift"
-            timestampString = "549088917.89714"
+            timestampString = "549578842.506778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -56,7 +58,7 @@
                   moduleName = "Adoptr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/leannepichay/Documents/adoptr/app/Adoptr/Adoptr/Accounts.swift"
-                  timestampString = "549338573.605309"
+                  timestampString = "549578842.8750629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -71,7 +73,7 @@
                   moduleName = "Adoptr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/leannepichay/Documents/adoptr/app/Adoptr/Adoptr/Accounts.swift"
-                  timestampString = "549338573.646979"
+                  timestampString = "549578842.878976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

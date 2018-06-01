@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var LastNameField: UITextField!
     @IBOutlet weak var BdayPicker: UIDatePicker!
     @IBOutlet weak var EmailField: UITextField!
+    @IBOutlet weak var ZipCodeField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var ConfirmPWField: UITextField!
     

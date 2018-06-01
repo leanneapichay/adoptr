@@ -13,6 +13,7 @@
 		B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */; };
 		B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* MatchViewController.swift */; };
 		B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */; };
+		B876F93920C1CB7F00EB62CA /* AdoptingInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */; };
 		B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */; };
 		B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0620AE88A2004F4905 /* ViewController.swift */; };
 		B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0820AE88A2004F4905 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		B876F93420BFAC4200EB62CA /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreviewViewController.swift; sourceTree = "<group>"; };
+		B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptingInputViewController.swift; sourceTree = "<group>"; };
 		B8AA6F0120AE88A2004F4905 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AA6F0620AE88A2004F4905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */,
 				B876F93420BFAC4200EB62CA /* MatchViewController.swift */,
 				B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */,
+				B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -421,6 +424,7 @@
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */,
+				B876F93920C1CB7F00EB62CA /* AdoptingInputViewController.swift in Sources */,
 				B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */,
 				B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */,
 			);
