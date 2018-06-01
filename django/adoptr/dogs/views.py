@@ -42,14 +42,6 @@ def get_dog_info(request):
 @api_view(['POST'])
 def create_dog(request):
 
-    name = request.data.get('name')
-    age = request.data.get('age')
-    des = request.data.get('description')
-    active = request.data.get('active')
-    trained = request.data.get('trained')
-    breed = request.data.get('breed')
-    shelter = request.data.get('shelter_id')
-
     serializer = DogSerializer(data=request.data)
 
     if serializer.is_valid():
