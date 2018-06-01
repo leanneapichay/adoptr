@@ -11,8 +11,8 @@ import UIKit
 class MatchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var petImage: UIImageView!
-    @IBOutlet weak var petName: UILabel!
+    @IBOutlet weak var ownerImage: UIImageView!
+    @IBOutlet weak var ownerName: UILabel!
     
     
     override func awakeFromNib() {

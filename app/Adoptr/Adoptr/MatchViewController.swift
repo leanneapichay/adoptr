@@ -39,8 +39,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     cell.cellView.layer.cornerRadius = (cell.cellView.frame.height / 2)
     
-    //cell.petName.text =           initialize with alamofire
-    //cell.petImage.image =
+    //cell.ownerName.text =           initialize with alamofire
+    //cell.ownerImage.image =
     
     cell.petImage.layer.cornerRadius = (cell.petImage.frame.height/2)
     
@@ -52,7 +52,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
 
  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if(segue.identifier == "showView"){
+    if(segue.identifier == "showOwnerView"){
         var upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
         
         let indexPath = self.tableView.indexPathsForSelectedRows
