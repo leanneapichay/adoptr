@@ -1,4 +1,4 @@
 from django.contrib import admin
 from .models import Dog
 
-admin.register(Dog)
+admin.site.register(Dog)
