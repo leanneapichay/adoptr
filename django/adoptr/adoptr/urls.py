@@ -6,4 +6,5 @@ urlpatterns = [
     path('shelters/', include('shelters.urls')),
     path('dogs/', include('dogs.urls')),
     path('accounts/', include('accounts.urls')),
+    path('feed/', include('feed.urls')),
 ]
