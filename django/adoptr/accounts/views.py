@@ -52,8 +52,6 @@ def signup_adopter(request):
 
 
 
-
-
 @api_view(['POST'])
 def signup_giver(request):
     pass
