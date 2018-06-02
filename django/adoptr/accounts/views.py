@@ -5,7 +5,6 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate
 from .models import Adopter, Giver
-from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 
 
@@ -38,6 +37,18 @@ def signup_adopter(request):
     dog_size = request.data.get('dog_size')
     dog_age = request.data.get('dog_age')
     dog_traits = request.data.get('dog_traits')
+
+    user_data = [email, password, first_name, last_name]
+    adopter_data = [zip_code, num_pets, birth_date, dog_size, dog_age, dog_traits]
+
+    serializer = AdopterSerializer(data=user_data)
+    a_serializer = AdopterSerializer(data=adopter_data)
+
+    # Change this in the future
+
+    # Create new user and then use it as the foreign key in order to create a new account
+
+    return Response({'User Data': serializer.data, 'Adopter Data': a_serializer.data})
 
 
 
