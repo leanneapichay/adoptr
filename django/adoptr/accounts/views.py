@@ -3,6 +3,7 @@ from .serializers import AdopterSerializer, GiverSerializer, UserSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .authentication import AuthBackend
+from .models import User
 
 
 @api_view(['POST'])
@@ -24,21 +25,22 @@ def login(request):
 @api_view(['POST'])
 def signup_adopter(request):
 
-    user_serializer = UserSerializer(data=request.data)
-    if user_serializer.is_valid():
-        user = user_serializer.save()
-        if user:
-            appended_data = request.data
-            appended_data['user'] = user.id  # append user id onto the request.data dictionary
-            a_serializer = AdopterSerializer(data=appended_data)
+    user = User.objects.create_user(email=request.data.get('email'), password=request.data.get('password'))
 
-            if a_serializer.is_valid():
-                a_serializer.save()
+    user_serializer = UserSerializer(user)
 
-                return Response({'User Data': user_serializer.data, 'Adopter Data': a_serializer.data},
-                                status=status.HTTP_201_CREATED)
+    if user:
+        appended_data = request.data
+        appended_data['user'] = user.id  # append user id onto the request.data dictionary
+        a_serializer = AdopterSerializer(data=appended_data)
 
-            return Response(a_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if a_serializer.is_valid():
+            a_serializer.save()
+
+            return Response({'User Data': user_serializer.data, 'Adopter Data': a_serializer.data},
+                            status=status.HTTP_201_CREATED)
+
+        return Response(a_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 
@@ -46,21 +48,22 @@ def signup_adopter(request):
 @api_view(['POST'])
 def signup_giver(request):
 
-    user_serializer = UserSerializer(data=request.data)
-    if user_serializer.is_valid():
-        user = user_serializer.save()
-        if user:
-            appended_data = request.data
-            appended_data['user'] = user.id  # append user id onto the request.data dictionary
-            g_serializer = GiverSerializer(data=appended_data)
+    user = User.objects.create_user(email=request.data.get('email'), password=request.data.get('password'))
 
-            if g_serializer.is_valid():
-                g_serializer.save()
+    user_serializer = UserSerializer(user)
 
-                return Response({'User Data': user_serializer.data, 'Adopter Data': g_serializer.data},
-                                status=status.HTTP_201_CREATED)
+    if user:
+        appended_data = request.data
+        appended_data['user'] = user.id  # append user id onto the request.data dictionary
+        g_serializer = GiverSerializer(data=appended_data)
 
-            return Response(g_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if g_serializer.is_valid():
+            g_serializer.save()
+
+            return Response({'User Data': user_serializer.data, 'Adopter Data': g_serializer.data},
+                            status=status.HTTP_201_CREATED)
+
+        return Response(g_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 

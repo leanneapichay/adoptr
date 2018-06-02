@@ -19,14 +19,3 @@ class GiverSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.Serializer):
 
     email = serializers.EmailField()
-
-    def create(self, validated_data):
-        user = User.objects.create_user(email=validated_data.get('email'),
-                                        password=validated_data.get('password'))
-
-        return user
-
-    def update(self, instance, validated_data):
-        # Can implement later
-        pass
-

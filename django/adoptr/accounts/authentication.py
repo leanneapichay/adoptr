@@ -7,7 +7,7 @@ class AuthBackend:
     def authenticate(email, password):
         try:
             user = User.objects.get(email=email)
-            if user.check_password(raw_password=password):  # not passing this section
+            if user.check_password(password):
                 return user
             else:
                 return None
