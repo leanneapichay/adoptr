@@ -12,7 +12,8 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     
-    var date: String = ""
+    var date: String? = ""
+    var data: [String:String]? = nil
     
     @IBOutlet weak var FirstNameField: UITextField?
     @IBOutlet weak var LastNameField: UITextField?
@@ -46,18 +47,17 @@ class SignUpViewController: UIViewController {
         let lastName = LastNameField?.text
         let birthdate = date
         let email = EmailField?.text
+        let zipcode = ZipCodeField?.text
         var password: String?
-        if(firstName == "" || lastName == "" || email == "" || password == "" || ConfirmPWField?.text == "" ){
+        if(firstName == "" || lastName == "" || email == "" || password == "" || ConfirmPWField?.text == "" || zipcode == ""){
             createAlert(title: "Error", message: "Please fill in all fields")
         }
         else{
             if(PasswordField?.text == ConfirmPWField?.text){
             password = PasswordField?.text
-            /*
-            let data : [String : String ] = ["firstName": firstName!, "lastName" : lastName!, "birthdate" : birthdate8, "email" : email!, "password" : password!]
-                
-            var acct: Acct = Acct(data)
-            */
+            
+                data = ["firstName": firstName!, "lastName" : lastName!, "birthdate" : birthdate, "email" : email!, "password" : password!, "zip" : zipcode!] as? [String : String]
+             
             performSegue(withIdentifier: "goToSplit", sender: self)
             }
             else{
@@ -93,6 +93,9 @@ class SignUpViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let receiver = segue.destination as! AcctSplitViewController
+        receiver.setData(inputData: data!)
+    }
 
 }

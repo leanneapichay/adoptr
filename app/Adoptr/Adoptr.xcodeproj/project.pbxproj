@@ -11,6 +11,7 @@
 		A400DDA9DF8615F2F83E5A6F /* Pods_Adoptr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB8C11E6E1E5EA4C7FC14D3 /* Pods_Adoptr.framework */; };
 		B811E11920C2495100CDEBC5 /* EditPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811E11820C2495100CDEBC5 /* EditPetViewController.swift */; };
 		B811E11B20C2495C00CDEBC5 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */; };
+		B811E11D20C2793300CDEBC5 /* AcctSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */; };
 		B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* SignUpViewController.swift */; };
 		B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */; };
 		B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* MatchViewController.swift */; };
@@ -60,6 +61,7 @@
 		A25FE76773799353132C9E50 /* Pods-AdoptrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdoptrUITests/Pods-AdoptrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B811E11820C2495100CDEBC5 /* EditPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewController.swift; sourceTree = "<group>"; };
 		B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcctSplitViewController.swift; sourceTree = "<group>"; };
 		B815F82D20B5BE66004F5943 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		B876F93420BFAC4200EB62CA /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				B876F93C20C2190A00EB62CA /* AdoptingInputBViewController.swift */,
 				B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */,
 				B811E11820C2495100CDEBC5 /* EditPetViewController.swift */,
+				B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -432,6 +435,7 @@
 				B876F93D20C2190A00EB62CA /* AdoptingInputBViewController.swift in Sources */,
 				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
 				B811E11B20C2495C00CDEBC5 /* AddPetViewController.swift in Sources */,
+				B811E11D20C2793300CDEBC5 /* AcctSplitViewController.swift in Sources */,
 				B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */,
 				B8F1E90B20BF46DC0043ED71 /* ListedPetsViewController.swift in Sources */,
 				B811E11920C2495100CDEBC5 /* EditPetViewController.swift in Sources */,

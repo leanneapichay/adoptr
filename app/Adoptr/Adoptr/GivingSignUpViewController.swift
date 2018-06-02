@@ -7,18 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
-class GivingSignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    @IBOutlet weak var AccountTypesPicker: UIPickerView!
-    
-    var pickerData: [String] = [String]()
+class GivingSignUpViewController: UIViewController {
+    private var data: [String:String]? = nil
+    @IBOutlet weak var shelterSwitch: UISwitch!
+    @IBOutlet weak var shelterNameField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pickerData = ["Animal Shelter Rep", "Independent donator"]
-        AccountTypesPicker.setValue(UIColor.white, forKey: "textColor")
         self.hideKeyboard()
     }
 
@@ -27,37 +24,36 @@ class GivingSignUpViewController: UIViewController, UIPickerViewDelegate, UIPick
         // Dispose of any resources that can be recreated.
     }
     
-    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        let titleData = pickerData[row]
-        
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Helvetica", size: 15.0)!,NSAttributedStringKey.foregroundColor:UIColor.white])
-        
-        return myTitle
-        
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+    public func setData(inputData: [String:String]) {
+        data = inputData
     }
 
+    @IBAction func createAcc(_ sender: UIButton) {
+        var shelter: Bool
+        var shelterName: String?
+        
+        if(shelterSwitch.isOn){
+            shelter = true
+            shelterName = shelterNameField.text
+        }
+        else{
+            shelter = false
+            shelterName = "N/A"
+        }
+        let parameters: Parameters = [
+            //take data out from the input dictionary
+            "first_name":data!["firstName"]!,
+            "last_name": data!["lastName"]!,
+            "email":data!["email"]!,
+            "zip_code": data!["zip"]!,
+            "birthdate": data!["birthdate"]!,
+            "password":data!["password"]!,
+            
+            //adoption-centric info
+            "shelter" : shelter,
+            "shelterName" : shelterName!
+        ]
+        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+    }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-/*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

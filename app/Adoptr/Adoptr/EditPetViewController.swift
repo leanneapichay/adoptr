@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import Alamofire
 
 class EditPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var breed: UITextField!
+    
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var active: UILabel!
+    @IBOutlet weak var trained: UILabel!
+    
     @IBOutlet weak var sizePicker: UIPickerView!
+
+    @IBOutlet weak var bio: UITextView!
     
     private let sizes = ["small", "medium", "large"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let parameter: Parameters = ["dog_id" : 5]
+        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameter).responseJSON{ response in
+            print(response)
+            if let petJSON = response.result.value{
+                let petObj : Dictionary = petJSON as! Dictionary<String, Any>
+                self.name.text = petObj["name"] as? String
+                self.breed.text = petObj["breed"] as? String
+                self.age.text = petObj["age"] as? String
+                self.active.text = petObj["active"] as? String
+                self.trained.text = petObj["trained"] as? String
+                self.bio.text = petObj["description"] as? String
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,15 +70,17 @@ class EditPetViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sizes[row]
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+    @IBAction func ageStepper(_ sender: UIStepper) {
+        age.text = String(Int(sender.value))
     }
-    */
+    
+    @IBAction func activeStepper(_ sender: UIStepper) {
+        active.text = String(Int(sender.value))
+    }
+    
+    @IBAction func trainedStepper(_ sender: UIStepper) {
+        trained.text = String(Int(sender.value))
+    }
 
 }

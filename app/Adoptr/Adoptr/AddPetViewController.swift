@@ -73,8 +73,9 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             "trained": Int(trainedLabel.text!)!,
             "description" : bioField.text!
         ]
-        
-        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters)
+
+        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        performSegue(withIdentifier: "nextView", sender: self)
     }
     
 }
