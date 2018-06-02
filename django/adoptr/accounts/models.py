@@ -6,7 +6,7 @@ from django.contrib.auth.models import BaseUserManager
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, password=None):
+    def create_user(self, email, password):
         if not email:
             raise ValueError('Users Must Have An Email Address')
 
@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
         )
 
         user.set_password(password)
-        user.save(using=self._db)
+        user.save()
         return user
 
     def create_staff_user(self, email, password):
@@ -66,11 +66,14 @@ class User(AbstractBaseUser):
 class Adopter(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     zip_code = models.SmallIntegerField()
     availability = models.SmallIntegerField()
     size = models.CharField(max_length=3)
     age = models.CharField(max_length=3)
     traits = models.CharField(max_length=3)
+    num_pets = models.SmallIntegerField()
 
     def __str__(self):
         return self.age
@@ -79,6 +82,8 @@ class Adopter(models.Model):
 class Giver(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     independent = models.BooleanField()
     zip_code = models.SmallIntegerField()
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, null=True, blank=True)
