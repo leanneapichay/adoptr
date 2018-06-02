@@ -1,25 +1,23 @@
 //
-//  GivingSignUpViewController.swift
+//  EditPetViewController.swift
 //  Adoptr
 //
-//  Created by Leanne Pichay on 25/5/18.
+//  Created by Leanne Pichay on 1/6/18.
 //  Copyright © 2018 adoptr. All rights reserved.
 //
 
 import UIKit
 
-class GivingSignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var AccountTypesPicker: UIPickerView!
+    @IBOutlet weak var sizePicker: UIPickerView!
     
-    var pickerData: [String] = [String]()
+    private let sizes = ["small", "medium", "large"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pickerData = ["Animal Shelter Rep", "Independent donator"]
-        AccountTypesPicker.setValue(UIColor.white, forKey: "textColor")
-        self.hideKeyboard()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +27,9 @@ class GivingSignUpViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let titleData = pickerData[row]
+        let titleData = sizes[row]
         
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Helvetica", size: 15.0)!,NSAttributedStringKey.foregroundColor:UIColor.white])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font:UIFont(name: "Helvetica", size: 11.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
         
         return myTitle
         
@@ -43,14 +41,15 @@ class GivingSignUpViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return sizes.count
     }
-
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return sizes[row]
     }
-/*
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

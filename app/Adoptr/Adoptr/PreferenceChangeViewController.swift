@@ -1,5 +1,5 @@
 //
-//  AdoptingInputViewController.swift
+//  PreferenceChangeViewController.swift
 //  Adoptr
 //
 //  Created by Leanne Pichay on 1/6/18.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AdoptingInputViewController: UIViewController {
-   
+class PreferenceChangeViewController: UIViewController {
+
+    @IBOutlet weak var activeAccSwitch: UISwitch!
     @IBOutlet weak var AwaySlider: UISlider!
     @IBOutlet weak var petAmountLabel: UILabel!
     
@@ -27,10 +28,10 @@ class AdoptingInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

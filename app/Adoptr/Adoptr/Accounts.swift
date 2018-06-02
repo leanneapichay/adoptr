@@ -58,3 +58,4 @@ public class Giving: Acct {
         super.init(data)
     }
 }
+
