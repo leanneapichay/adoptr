@@ -73,7 +73,7 @@ class Adopter(models.Model):
     traits = models.CharField(max_length=3)
 
     def __str__(self):
-        return self.user.email
+        return self.age
 
 
 class Giver(models.Model):
@@ -84,7 +84,7 @@ class Giver(models.Model):
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.user.email
+        return self.independent
 
 
 

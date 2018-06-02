@@ -8,6 +8,6 @@ class Shelter(models.Model):
     zip = models.SmallIntegerField()
 
     def __str__(self):
-        return self.name + ' ' + self.zip
+        return self.name + ' ' + str(self.zip)
 
 

@@ -41,7 +41,32 @@ def get_dog_info(request):
 @api_view(['POST'])
 def create_dog(request):
 
-    pass
+    serializer = DogSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def edit_dog(request):
+
+    dog_id = request.data.get('id')
+
+    try:
+        dog = Dog.objects.get(id=dog_id)
+    except Dog.DoesNotExist:
+        return Response('Dog Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    serializer = DogSerializer(dog, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
