@@ -3,7 +3,7 @@ from .serializers import AdopterSerializer, GiverSerializer, UserSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .authentication import AuthBackend
-from .models import User
+from .models import User, Adopter, Giver
 
 
 @api_view(['POST'])
@@ -60,11 +60,58 @@ def signup_giver(request):
         if g_serializer.is_valid():
             g_serializer.save()
 
-            return Response({'User Data': user_serializer.data, 'Adopter Data': g_serializer.data},
+            return Response({'User Data': user_serializer.data, 'Giver Data': g_serializer.data},
                             status=status.HTTP_201_CREATED)
 
         return Response(g_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_adopter_info(request):
+
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        adopter = Adopter.objects.get(user_id=user.id)
+    except Adopter.DoesNotExist:
+        return Response('Adopter Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    user_serializer = UserSerializer(user)
+    adopter_serializer = AdopterSerializer(adopter)
+
+    return Response({'User Data': user_serializer.data, 'Adopter Data': adopter_serializer.data},
+                    status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_giver_info(request):
+
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        giver = Giver.objects.get(user_id=user.id)
+    except Giver.DoesNotExist:
+        return Response('Adopter Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    user_serializer = UserSerializer(user)
+    giver_serializer = GiverSerializer(giver)
+
+    return Response({'User Data': user_serializer.data, 'Giver Data': giver_serializer.data},
+                    status=status.HTTP_200_OK)
+
+
+
 
 
