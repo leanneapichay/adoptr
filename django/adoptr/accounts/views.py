@@ -1,59 +1,67 @@
 from rest_framework import status
-from .serializers import AdopterSerializer, GiverSerializer
-from django.contrib.auth.models import User
-from rest_framework.authtoken.models import Token
+from .serializers import AdopterSerializer, GiverSerializer, UserSerializer
 from rest_framework.decorators import api_view
-from django.contrib.auth import authenticate
-from .models import Adopter, Giver
 from rest_framework.response import Response
+from .authentication import AuthBackend
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def login(request):
 
     email = request.data.get('email')
     password = request.data.get('password')
 
-    user = authenticate(email=email, password=password)  # Make custom auth
+    user = AuthBackend.authenticate(email=email, password=password)
 
     if not user:
         return Response('Wong Username or Password', status=status.HTTP_401_UNAUTHORIZED)
 
-    token, _ = Token.objects.get_or_create(user_id=user.id)
+    user_serializer = UserSerializer(user)
 
-    return Response({"token": token.key, "id": user.id}, status=status.HTTP_200_OK)
+    return Response(user_serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
 def signup_adopter(request):
 
-    email = request.data.get('email')
-    password = request.data.get('password')
-    first_name = request.data.get('first_name')
-    last_name = request.data.get('last_name')
-    zip_code = request.data.get('zip_code')
-    num_pets = request.data.get('num_pets')
-    birth_date = request.data.get('birth_date')
-    dog_size = request.data.get('dog_size')
-    dog_age = request.data.get('dog_age')
-    dog_traits = request.data.get('dog_traits')
+    user_serializer = UserSerializer(data=request.data)
+    if user_serializer.is_valid():
+        user = user_serializer.save()
+        if user:
+            appended_data = request.data
+            appended_data['user'] = user.id  # append user id onto the request.data dictionary
+            a_serializer = AdopterSerializer(data=appended_data)
 
-    user_data = [email, password, first_name, last_name]
-    adopter_data = [zip_code, num_pets, birth_date, dog_size, dog_age, dog_traits]
+            if a_serializer.is_valid():
+                a_serializer.save()
 
-    serializer = AdopterSerializer(data=user_data)
-    a_serializer = AdopterSerializer(data=adopter_data)
+                return Response({'User Data': user_serializer.data, 'Adopter Data': a_serializer.data},
+                                status=status.HTTP_201_CREATED)
 
-    # Change this in the future
+            return Response(a_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # Create new user and then use it as the foreign key in order to create a new account
-
-    return Response({'User Data': serializer.data, 'Adopter Data': a_serializer.data})
-
+    return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
 def signup_giver(request):
-    pass
+
+    user_serializer = UserSerializer(data=request.data)
+    if user_serializer.is_valid():
+        user = user_serializer.save()
+        if user:
+            appended_data = request.data
+            appended_data['user'] = user.id  # append user id onto the request.data dictionary
+            g_serializer = GiverSerializer(data=appended_data)
+
+            if g_serializer.is_valid():
+                g_serializer.save()
+
+                return Response({'User Data': user_serializer.data, 'Adopter Data': g_serializer.data},
+                                status=status.HTTP_201_CREATED)
+
+            return Response(g_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 
 

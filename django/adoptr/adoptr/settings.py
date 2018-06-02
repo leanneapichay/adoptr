@@ -25,7 +25,7 @@ SECRET_KEY = '-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,6 +74,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adoptr.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = ('accounts.authentication.AuthBackend', 'django.contrib.auth.backends.ModelBackend',)
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
