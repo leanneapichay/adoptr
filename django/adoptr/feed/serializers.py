@@ -8,6 +8,7 @@ class MatchPPSerializer(serializers.ModelSerializer):
     def complete_deal(match_obj, accepted):
         match_obj.complete = True
         match_obj.accepted = accepted
+        match_obj.save()
         return True
 
     class Meta:
@@ -21,6 +22,7 @@ class MatchSPSerializer(serializers.ModelSerializer):
     def complete_deal(match_obj, accepted):
         match_obj.complete = True
         match_obj.accepted = accepted
+        match_obj.save()
         return True
 
     class Meta:
