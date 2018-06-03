@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from .serializers import ShelterSerializer
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_zip_shelters(request):
 
     zip_code = request.data.get('zip')
@@ -20,7 +20,7 @@ def get_zip_shelters(request):
     return Response(shelter_serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_shelter(request):
 
     shelter_id = request.data.get('shelter_id')

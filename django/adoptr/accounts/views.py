@@ -68,7 +68,7 @@ def signup_giver(request):
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_adopter_info(request):
 
     email = request.data.get('email')
@@ -90,7 +90,7 @@ def get_adopter_info(request):
                     status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_giver_info(request):
 
     email = request.data.get('email')
@@ -112,7 +112,7 @@ def get_giver_info(request):
                     status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_account_type(request):
 
     email = request.data.get('email')

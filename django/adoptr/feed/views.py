@@ -6,11 +6,10 @@ from .models import MatchPP, MatchSP
 from .serializers import MatchPPSerializer, MatchSPSerializer
 from dogs.models import Dog
 from dogs.serializers import DogSerializer
-from django.db.models import Q
 from .feed_algorithm import get_query
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def feed(request):
 
     email = request.data.get('email')  # can change to tokens
@@ -43,11 +42,34 @@ def feed(request):
 
     query = get_query(char_list=char_list)
 
-    dogs = Dog.objects.filter(query)
+    dogs = Dog.objects.filter(query)[int(num) * 5:(int(num) * 5) + 5]
 
     dog_serializer = DogSerializer(dogs, many=True)
 
     return Response(dog_serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+def create_match_pp(request):
+
+    adopter_email = request.data.get('email')  # can use tokens
+
+    try:
+        user = User.objects.get(email=adopter_email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        adopter = Adopter.objects.get(user_id=user.id)
+    except Adopter.DoesNotExist:
+        return Response('Adopter Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    appended_data = request.data
+    appended_data['adopter_id'] = adopter.id
+
+
+    serializer = MatchPPSerializer()
+
 
 
 
