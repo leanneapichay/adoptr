@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import MatchPP, MatchSP
 
-# Register your models here.
+admin.site.register(MatchPP)
+admin.site.register(MatchSP)

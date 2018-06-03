@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import User, Adopter, Giver
+from accounts.models import Adopter, Giver
 from dogs.models import Dog
 from shelters.models import Shelter
 
@@ -13,6 +13,9 @@ class MatchPP(models.Model):
     complete = models.BooleanField(default=False)
     accepted = models.NullBooleanField(null=True, blank=True)
 
+    def __str__(self):
+        return self.dog.name + " " + str(self.adopter) + " " + str(self.owner)
+
 
 # Person and Shelter
 class MatchSP(models.Model):
@@ -23,4 +26,5 @@ class MatchSP(models.Model):
     complete = models.BooleanField(default=False)
     accepted = models.NullBooleanField(null=True, blank=True)
 
-
+    def __str__(self):
+        return self.dog.name + " " + str(self.adopter) + " " + str(self.shelter)

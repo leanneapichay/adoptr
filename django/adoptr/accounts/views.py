@@ -112,6 +112,24 @@ def get_giver_info(request):
                     status=status.HTTP_200_OK)
 
 
+@api_view(['GET'])
+def get_account_type(request):
 
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        Adopter.objects.get(user_id=user.id)
+        return Response('Adopter', status=status.HTTP_200_OK)
+    except Adopter.DoesNotExist:
+        try:
+            Giver.objects.get(user_id=user.id)
+            return Response('Giver', status=status.HTTP_200_OK)
+        except Giver.DoesNotExist:
+            return Response('Account Not Found', status=status.HTTP_404_NOT_FOUND)
 
 
