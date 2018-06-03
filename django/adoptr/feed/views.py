@@ -145,16 +145,17 @@ def get_completed_matches(request):
 
 
 @api_view(['PUT'])
-def accept_match_giver(request):
+def complete_match_giver(request):
 
     match_id = request.data.get('match-id')
+    accepted = request.data.get('accepted')
 
     try:
         match = MatchPP.objects.get(id=match_id)
     except MatchPP.DoesNotExist:
         return Response('Match Not Found', status=status.HTTP_404_NOT_FOUND)
 
-    if MatchPPSerializer.complete_deal(match_obj=match, accepted=True):
+    if MatchPPSerializer.complete_deal(match_obj=match, accepted=accepted):
         return Response('Success', status=status.HTTP_200_OK)
 
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
