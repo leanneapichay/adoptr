@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var Image: UIImageView!
+
     @IBOutlet weak var Bio: UILabel!
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Age: UILabel!
@@ -18,9 +19,26 @@ class FeedViewController: UIViewController, UINavigationControllerDelegate, UIIm
     @IBOutlet weak var Active: UILabel!
     @IBOutlet weak var Trained: UILabel!
     
+    private var inc: Int = 0
+    private var swipes: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var parameters: Parameters = [
+            "email" : LoggedInEmail!,
+            "num" : inc
+        ]
+        
+        Alamofire.request("\(SERVER_URL)/feed/get-feed/", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            print(response)
+        }
+        
+        
+        
+        
+        
+        
+        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipeGesture(gesture:)"))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
@@ -30,6 +48,8 @@ class FeedViewController: UIViewController, UINavigationControllerDelegate, UIIm
         self.view.addGestureRecognizer(swipeLeft)
         
         Name.text = "Hello"
+        
+        
         
     }
 

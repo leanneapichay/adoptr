@@ -10,11 +10,9 @@ import UIKit
 import Alamofire
 
 public var LoggedInEmail : String? = nil
-public let SERVER_URL: String = "http://55819ece.ngrok.io"
+public let SERVER_URL: String = "http://andrewsong17.pythonanywhere.com"
 
 class LoginViewController: UIViewController {
-    
-    
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -39,13 +37,10 @@ class LoginViewController: UIViewController {
             "password":pw!
         ]
         Alamofire.request("\(SERVER_URL)/accounts/login/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
-                print(response.value)
-            
                 if let loginJSON = response.result.value{
                     if let loginObj : Dictionary = loginJSON as? Dictionary<String, Any>{
                         LoggedInEmail = loginObj["email"] as? String
                         loginSuccess = true
-                        print(loginSuccess)
                         self.goToSegue(loginSuccess)
                         
                     }
@@ -61,24 +56,22 @@ class LoginViewController: UIViewController {
     
     func goToSegue(_ loginSuccess : Bool){
         if(loginSuccess == true){
-            print("in login success if")
             let parameters: Parameters = ["email":LoggedInEmail!]
             var accountType : String = ""
             Alamofire.request("\(SERVER_URL)/accounts/account-type/", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
-                print(response)
                 if let loginJSON = response.result.value{
+                    print("Login JSON:")
                     print(loginJSON)
                     accountType = loginJSON as! String
+                    print(accountType)
+                    if(accountType == "Giver"){
+                        self.performSegue(withIdentifier: "giverPath", sender: self)
+                    }
+                    else{
+                        self.performSegue(withIdentifier: "adopterPath", sender: self)
+                    }
                 }
             }
-            print(accountType)
-            if(accountType == "giver"){
-                performSegue(withIdentifier: "giverPath", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "adopterPath", sender: self)
-            }
-        
         }
     }
     

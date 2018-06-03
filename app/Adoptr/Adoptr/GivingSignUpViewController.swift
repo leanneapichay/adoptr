@@ -49,10 +49,14 @@ class GivingSignUpViewController: UIViewController {
             "password":data!["password"]!,
             
             //adoption-centric info
-            "independent" : shelter,
-            "shelterName" : shelterName!
+            "independent" : !shelter,
+            "shelterName" : shelterName
         ]
-        Alamofire.request("\(SERVER_URL)/accounts/create-giver/ email=giver2@test.com", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(SERVER_URL)/accounts/create-giver/", method: .post, parameters: parameters, encoding: JSONEncoding.default) .responseJSON{ response in
+                print(response)
+        }
+        LoggedInEmail = data!["email"]!
+        performSegue(withIdentifier: "givingWelcome", sender: self)
     }
     
 }

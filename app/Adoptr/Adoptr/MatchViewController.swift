@@ -20,7 +20,7 @@ override func viewDidLoad() {
     
     tableView.delegate = self
     tableView.dataSource = self
-    
+
     super.viewDidLoad()
 }
 

@@ -17,8 +17,10 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var trainedLabel: UILabel!
+    @IBOutlet weak var hypoSwitch: UISwitch!
     
     private let sizes = ["Small", "Medium", "Large"]
+    private var sizeVal: String = "Small"
     @IBOutlet weak var sizePicker: UIPickerView!
     
     @IBOutlet weak var bioField: UITextView!
@@ -51,6 +53,7 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return sizes[row]
     }
     
+    
     //STEPPER METHODS
     @IBAction func ageStepper(_ sender: UIStepper) {
         ageLabel.text = String(Int(sender.value))
@@ -65,17 +68,57 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
+        let age = Int(ageLabel.text!)!
+        var ageRange: Int = 0
+        if(age<2){
+            ageRange = 0
+        }
+        else if(age<10){
+            ageRange = 1
+        }
+        else{
+            ageRange = 2
+        }
+        let active = Int(activeLabel.text!)!
+        var activeOn: Bool = false
+        if(active>5){
+            activeOn = true
+        }
+        let trained = Int(trainedLabel.text!)!
+        var trainedOn = false
+        if(trained > 5){
+            trainedOn = true
+        }
+        let size: Int = sizePicker.selectedRow(inComponent: 0)
+
+        
         let parameters: Parameters = [
             "name": nameField.text!,
+            "age": age,
+            "age_range":ageRange,
             "breed": breedField.text!,
-            "age": Int(ageLabel.text!)!,
-            "active": Int(activeLabel.text!)!,
-            "trained": Int(trainedLabel.text!)!,
-            "description" : bioField.text!
+            "active": activeOn,
+            "trained": trainedOn,
+            "hypoallergenic": hypoSwitch.isOn,
+            "size": size,
+            "description" : bioField.text!,
+            "owner": 1
         ]
 
-        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
-        performSegue(withIdentifier: "nextView", sender: self)
+        Alamofire.request("\(SERVER_URL)/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        self.createAlert(title: "Success", message: "Your pet has been listed")
+        
+        performSegue(withIdentifier: "returnToMenu", sender: self)
+    }
+    
+
+    func createAlert(title:String, message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //creating a button
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: {
+            _ in self.performSegue(withIdentifier: "returnToMenu", sender: self)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
