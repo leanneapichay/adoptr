@@ -4,6 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .authentication import AuthBackend
 from .models import User, Adopter, Giver
+from dogs.serializers import DogSerializer
+from dogs.models import Dog
 
 
 @api_view(['POST'])
@@ -131,5 +133,26 @@ def get_account_type(request):
             return Response('Giver', status=status.HTTP_200_OK)
         except Giver.DoesNotExist:
             return Response('Account Not Found', status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['PUT'])
+def get_pets(request):
+
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    dogs = Dog.objects.filter(owner_id=user.id)
+
+    serializer = DogSerializer(dogs, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
 
 

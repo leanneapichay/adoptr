@@ -65,15 +65,19 @@ def create_match_pp(request):
         return Response('Adopter Not Found', status=status.HTTP_404_NOT_FOUND)
 
     appended_data = request.data
-    appended_data['adopter_id'] = adopter.id
+    appended_data['adopter'] = adopter.id
+
+    serializer = MatchPPSerializer(data=appended_data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-    serializer = MatchPPSerializer()
-
-
-
-
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_non_completed_matches(request):
 
     adopter_email = request.data.get('email')
@@ -97,7 +101,7 @@ def get_non_completed_matches(request):
     return Response({'People': match_pp_serializer.data, 'Shelters': match_sp_serializer.data})
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_completed_matches(request):
 
     adopter_email = request.data.get('email')
@@ -123,7 +127,7 @@ def get_completed_matches(request):
                     status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def accept_match_giver(request):
 
     match_id = request.data.get('match-id')
