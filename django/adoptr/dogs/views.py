@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from .serializers import DogSerializer
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_dogs_shelter(request):
 
     shelter_id = request.data.get('shelter_id')
@@ -20,7 +20,7 @@ def get_dogs_shelter(request):
     return Response(dog_serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_dog_info(request):
 
     dog_id = request.data.get('dog_id')

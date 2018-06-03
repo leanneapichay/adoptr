@@ -76,7 +76,7 @@ class Adopter(models.Model):
     num_pets = models.SmallIntegerField()
 
     def __str__(self):
-        return self.age
+        return self.first_name + " " + self.last_name
 
 
 class Giver(models.Model):
@@ -89,7 +89,7 @@ class Giver(models.Model):
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.independent
+        return self.first_name + " " + self.last_name
 
 
 
