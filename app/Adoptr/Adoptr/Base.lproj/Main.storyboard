@@ -1865,11 +1865,10 @@
         <image name="whiteBox" width="109" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vwo-vl-4OO"/>
         <segue reference="Icj-Jh-xHq"/>
         <segue reference="ERd-ik-fTI"/>
         <segue reference="kRQ-gI-166"/>
-        <segue reference="aoF-jf-9TX"/>
+        <segue reference="ZJX-rF-GS7"/>
         <segue reference="AZf-73-Yfe"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -64,11 +64,11 @@ class LoginViewController: UIViewController {
             print("in login success if")
             let parameters: Parameters = ["email":LoggedInEmail!]
             var accountType : String = ""
-            Alamofire.request("\(SERVER_URL)/accounts/account-type/", method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            Alamofire.request("\(SERVER_URL)/accounts/account-type/", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                print(response)
                 if let loginJSON = response.result.value{
                     print(loginJSON)
-                    let loginObj : Dictionary = loginJSON as! Dictionary<String, Any>
-                    accountType = (loginObj["acct_type"] as? String)!
+                    accountType = loginJSON as! String
                 }
             }
             print(accountType)

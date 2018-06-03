@@ -24,19 +24,20 @@ class AdopterWelcomeViewController: UIViewController {
     }
     
     private func changeName(){
-        var name : String = "name"
         print(LoggedInEmail!)
-        let parameters: Parameters = ["email":LoggedInEmail!]
-        let url = "\(SERVER_URL)/accounts/adopter-data/"
+        let parameters: Parameters = ["email": LoggedInEmail!]
+        let url = SERVER_URL + "/accounts/adopter-data/"
         print("\n\(url)")
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON{ response in
+        Alamofire.request(url, method: .put, parameters: parameters).responseJSON{ response in
             print("\nAlamofire response:\n\(response)")
             if let userJSON = response.result.value{
                 if let userObj : Dictionary = userJSON as? Dictionary<String, Any> {
-                    name = userObj["first_name"] as! String
+                    let adopterObj: Dictionary = userObj["Adopter Data"] as! Dictionary<String, Any>
+                    self.nameLabel.text = adopterObj["first_name"]! as? String
+                    print(adopterObj["first_name"]!)
                 }
             }
         }
-        self.nameLabel.text = name
+        
     }
 }
