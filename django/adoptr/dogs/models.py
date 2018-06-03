@@ -1,6 +1,6 @@
 from django.db import models
 from shelters.models import Shelter
-from accounts.models import User
+from accounts.models import Giver
 
 
 class Dog(models.Model):
@@ -14,7 +14,7 @@ class Dog(models.Model):
     hypoallergenic = models.BooleanField()
     size = models.SmallIntegerField()
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, null=True, blank=True)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    owner = models.ForeignKey(Giver, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
