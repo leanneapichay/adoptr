@@ -145,7 +145,12 @@ def get_pets(request):
     except User.DoesNotExist:
         return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
 
-    dogs = Dog.objects.filter(owner_id=user.id)
+    try:
+        giver = Giver.objects.get(user_id=user.id)
+    except Giver.DoesNotExist:
+        return Response('Account Is Not A Giver', status=status.HTTP_404_NOT_FOUND)
+
+    dogs = Dog.objects.filter(owner_id=giver.id)
 
     serializer = DogSerializer(dogs, many=True)
 
