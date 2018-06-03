@@ -11,6 +11,7 @@ import Alamofire
 
 class EditPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    private var petID: Int? = nil
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var breed: UITextField!
@@ -42,6 +43,10 @@ class EditPetViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
 
+    public func setID(_ input: Int){
+        petID = input
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

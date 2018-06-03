@@ -7,29 +7,38 @@
 //
 
 import UIKit
+import Alamofire
 
 class MatchPreviewViewController: UIViewController {
-
+    
+    private var userID: Int? = nil
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var petMatchLabel: UILabel!
+    @IBOutlet weak var availabilityLabel: UILabel!
+    @IBOutlet weak var currentPetLabel: UILabel!
+    @IBOutlet weak var bioField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        var parameter: Parameters = ["id": userID!]
+        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameter).responseJSON{ response in
+            print(response)
+            if let acctJSON = response.result.value{
+                let acctObj : Dictionary = acctJSON as! Dictionary<String, Any>
+                self
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    public func setID(_ input: Int){
+        userID = input
     }
-    */
-
 }

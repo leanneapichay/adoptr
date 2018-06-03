@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MatchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -21,8 +22,7 @@ override func viewDidLoad() {
     tableView.dataSource = self
     
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    Alamofire.request("www.google.com", method: .get, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
 }
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,15 +52,15 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
 
  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if(segue.identifier == "showOwnerView"){
-        var upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
-        
-        let indexPath = self.tableView.indexPathsForSelectedRows
-        
-        
-    }
+    var upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
+    
+    let indexPath = self.tableView.indexPathsForSelectedRows
+    
+    upcoming.setID(1)
  }
- 
-
+@IBAction func moreinfo(_ sender: UIButton) {
+    performSegue(withIdentifier: "showOwnerView", sender: self)
+}
+    
 }
 

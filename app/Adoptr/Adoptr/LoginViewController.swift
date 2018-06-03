@@ -8,9 +8,15 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+
+public var LoggedInEmail : String? = nil
 
 class LoginViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +29,50 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginAttempt(_ sender: UIButton) {
+        let email = emailField.text
+        let pw = passwordField.text
+        var loginSuccess : Bool = false
+        let parameters: Parameters = [
+            "email":email!,
+            "password":pw!
+        ]
+        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                switch response.result {
+                case .success:
+                    if let loginJSON = response.result.value{
+                        let loginObj : Dictionary = loginJSON as! Dictionary<String, Any>
+                        LoggedInEmail = loginObj["email"] as? String
+                    }
+                    loginSuccess = true
+                case .failure:
+                    self.createAlert(title: "Login failed", message: "Please try again")
+                }
+        }
+        if(loginSuccess){
+            let parameters: Parameters = ["email":LoggedInEmail!]
+            var accountType : String
+            Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                if let loginJSON = response.result.value{
+                    print(loginJSON)
+                    let loginObj : Dictionary = loginJSON as! Dictionary<String, Any>
+                    accountType = (loginObj["acct_type"] as? String)!
+                }
+            }
+            if(accountType == "giver"){
+                performSegue(withIdentifier: "giverPath", sender: self)
+            }
+            else{
+                performSegue(withIdentifier: "adopterPath", sender: self)
+            }
+        
+        }
     }
-    */
-
+    
+    func createAlert(title:String, message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //creating a button
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
