@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 public var LoggedInEmail : String? = nil
+public let SERVER_URL: String = "http://55819ece.ngrok.io"
 
 class LoginViewController: UIViewController {
     
@@ -37,28 +38,40 @@ class LoginViewController: UIViewController {
             "email":email!,
             "password":pw!
         ]
-        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
-                switch response.result {
-                case .success:
-                    if let loginJSON = response.result.value{
-                        let loginObj : Dictionary = loginJSON as! Dictionary<String, Any>
+        Alamofire.request("\(SERVER_URL)/accounts/login/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                print(response.value)
+            
+                if let loginJSON = response.result.value{
+                    if let loginObj : Dictionary = loginJSON as? Dictionary<String, Any>{
                         LoggedInEmail = loginObj["email"] as? String
+                        loginSuccess = true
+                        print(loginSuccess)
+                        self.goToSegue(loginSuccess)
+                        
                     }
-                    loginSuccess = true
-                case .failure:
+                    else{
+                        self.createAlert(title: "Login failed", message: "Please try again")
+                    }
+                }
+                else{
                     self.createAlert(title: "Login failed", message: "Please try again")
                 }
         }
-        if(loginSuccess){
+    }
+    
+    func goToSegue(_ loginSuccess : Bool){
+        if(loginSuccess == true){
+            print("in login success if")
             let parameters: Parameters = ["email":LoggedInEmail!]
-            var accountType : String
-            Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            var accountType : String = ""
+            Alamofire.request("\(SERVER_URL)/accounts/account-type/", method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
                 if let loginJSON = response.result.value{
                     print(loginJSON)
                     let loginObj : Dictionary = loginJSON as! Dictionary<String, Any>
                     accountType = (loginObj["acct_type"] as? String)!
                 }
             }
+            print(accountType)
             if(accountType == "giver"){
                 performSegue(withIdentifier: "giverPath", sender: self)
             }
@@ -68,6 +81,8 @@ class LoginViewController: UIViewController {
         
         }
     }
+    
+    
     
     func createAlert(title:String, message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

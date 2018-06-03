@@ -46,14 +46,13 @@ class GivingSignUpViewController: UIViewController {
             "last_name": data!["lastName"]!,
             "email":data!["email"]!,
             "zip_code": data!["zip"]!,
-            "birthdate": data!["birthdate"]!,
             "password":data!["password"]!,
             
             //adoption-centric info
-            "shelter" : shelter,
+            "independent" : shelter,
             "shelterName" : shelterName!
         ]
-        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(SERVER_URL)/accounts/create-giver/ email=giver2@test.com", method: .post, parameters: parameters, encoding: JSONEncoding.default)
     }
     
 }

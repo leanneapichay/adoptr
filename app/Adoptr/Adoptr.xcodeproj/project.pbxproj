@@ -13,6 +13,8 @@
 		B811E11B20C2495C00CDEBC5 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */; };
 		B811E11D20C2793300CDEBC5 /* AcctSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */; };
 		B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* SignUpViewController.swift */; };
+		B86E1ABB20C371BE00F540E9 /* AdopterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E1ABA20C371BE00F540E9 /* AdopterWelcomeViewController.swift */; };
+		B86E1ABD20C371CC00F540E9 /* GiverWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E1ABC20C371CC00F540E9 /* GiverWelcomeViewController.swift */; };
 		B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */; };
 		B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* MatchViewController.swift */; };
 		B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */; };
@@ -63,6 +65,8 @@
 		B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcctSplitViewController.swift; sourceTree = "<group>"; };
 		B815F82D20B5BE66004F5943 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B86E1ABA20C371BE00F540E9 /* AdopterWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdopterWelcomeViewController.swift; sourceTree = "<group>"; };
+		B86E1ABC20C371CC00F540E9 /* GiverWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiverWelcomeViewController.swift; sourceTree = "<group>"; };
 		B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		B876F93420BFAC4200EB62CA /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreviewViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */,
 				B811E11820C2495100CDEBC5 /* EditPetViewController.swift */,
 				B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */,
+				B86E1ABA20C371BE00F540E9 /* AdopterWelcomeViewController.swift */,
+				B86E1ABC20C371CC00F540E9 /* GiverWelcomeViewController.swift */,
 				B8AA6F0B20AE88A6004F4905 /* Assets.xcassets */,
 				B8AA6F0820AE88A2004F4905 /* Main.storyboard */,
 				B8AA6F0D20AE88A6004F4905 /* LaunchScreen.storyboard */,
@@ -439,8 +445,10 @@
 				B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */,
 				B8F1E90B20BF46DC0043ED71 /* ListedPetsViewController.swift in Sources */,
 				B811E11920C2495100CDEBC5 /* EditPetViewController.swift in Sources */,
+				B86E1ABB20C371BE00F540E9 /* AdopterWelcomeViewController.swift in Sources */,
 				B8F1E90E20BF4A0D0043ED71 /* ListedPetViewCell.swift in Sources */,
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
+				B86E1ABD20C371CC00F540E9 /* GiverWelcomeViewController.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
 				B876F93B20C1F5B500EB62CA /* PreferenceChangeViewController.swift in Sources */,
 				B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */,

@@ -173,7 +173,7 @@ class AdoptingInputViewController: UIViewController {
                 }
             }
         }
-        
+        print(data!["email"]!)
         let parameters: Parameters = [
             //take data out from the input dictionary
             "first_name":data!["firstName"]!,
@@ -190,6 +190,10 @@ class AdoptingInputViewController: UIViewController {
             "age" : age,
             "traits" : traits
         ]
-        Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(SERVER_URL)/accounts/create-adopter/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                print(response)
+        }
+        LoggedInEmail = data!["email"]!
+        performSegue(withIdentifier: "adoptingWelcome", sender: self)
     }
 }

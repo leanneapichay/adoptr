@@ -22,7 +22,6 @@ override func viewDidLoad() {
     tableView.dataSource = self
     
     super.viewDidLoad()
-    Alamofire.request("www.google.com", method: .get, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
 }
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
