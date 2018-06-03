@@ -4,6 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .authentication import AuthBackend
 from .models import User, Adopter, Giver
+from dogs.serializers import DogSerializer
+from dogs.models import Dog
 
 
 @api_view(['POST'])
@@ -68,7 +70,7 @@ def signup_giver(request):
     return Response('Something Went Wrong', status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_adopter_info(request):
 
     email = request.data.get('email')
@@ -90,7 +92,7 @@ def get_adopter_info(request):
                     status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_giver_info(request):
 
     email = request.data.get('email')
@@ -110,6 +112,45 @@ def get_giver_info(request):
 
     return Response({'User Data': user_serializer.data, 'Giver Data': giver_serializer.data},
                     status=status.HTTP_200_OK)
+
+
+@api_view(['PUT'])
+def get_account_type(request):
+
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        Adopter.objects.get(user_id=user.id)
+        return Response('Adopter', status=status.HTTP_200_OK)
+    except Adopter.DoesNotExist:
+        try:
+            Giver.objects.get(user_id=user.id)
+            return Response('Giver', status=status.HTTP_200_OK)
+        except Giver.DoesNotExist:
+            return Response('Account Not Found', status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['PUT'])
+def get_pets(request):
+
+    email = request.data.get('email')
+
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    dogs = Dog.objects.filter(owner_id=user.id)
+
+    serializer = DogSerializer(dogs, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 
 

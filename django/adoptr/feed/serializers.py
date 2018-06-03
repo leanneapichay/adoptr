@@ -24,7 +24,7 @@ class MatchSPSerializer(serializers.ModelSerializer):
         return True
 
     class Meta:
-        model = MatchPP
+        model = MatchSP
         fields = '__all__'
 
 
