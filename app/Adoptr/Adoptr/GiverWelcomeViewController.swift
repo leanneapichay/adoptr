@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class GiverWelcomeViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        changeName()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +24,22 @@ class GiverWelcomeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func changeName(){
+        print(LoggedInEmail!)
+        let parameters: Parameters = ["email": LoggedInEmail!]
+        let url = SERVER_URL + "/accounts/adopter-data/"
+        print("\n\(url)")
+        Alamofire.request(url, method: .put, parameters: parameters).responseJSON{ response in
+            print("\nAlamofire response:\n\(response)")
+            if let userJSON = response.result.value{
+                if let userObj : Dictionary = userJSON as? Dictionary<String, Any> {
+                    let adopterObj: Dictionary = userObj["Adopter Data"] as! Dictionary<String, Any>
+                    self.nameLabel.text = adopterObj["first_name"]! as? String
+                    print(adopterObj["first_name"]!)
+                }
+            }
+        }
+        
     }
-    */
 
 }

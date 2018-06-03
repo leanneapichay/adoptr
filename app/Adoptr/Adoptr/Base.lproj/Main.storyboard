@@ -970,7 +970,7 @@
         <!--Welcome-->
         <scene sceneID="R5j-kk-3Zz">
             <objects>
-                <viewController id="CuK-xr-Pme" userLabel="Welcome" sceneMemberID="viewController">
+                <viewController id="CuK-xr-Pme" userLabel="Welcome" customClass="GiverWelcomeViewController" customModule="Adoptr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55N-Hw-4A6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1026,6 +1026,9 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="sU2-UX-t0x"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="feL-d1-JZF" id="dbF-hv-Dow"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8V-8z-H9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1868,7 +1871,7 @@
         <segue reference="Icj-Jh-xHq"/>
         <segue reference="ERd-ik-fTI"/>
         <segue reference="kRQ-gI-166"/>
-        <segue reference="ZJX-rF-GS7"/>
+        <segue reference="aoF-jf-9TX"/>
         <segue reference="AZf-73-Yfe"/>
     </inferredMetricsTieBreakers>
 </document>
