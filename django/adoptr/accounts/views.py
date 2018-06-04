@@ -157,6 +157,47 @@ def get_pets(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@api_view(['PUT'])
+def get_adopter(request):
+
+    adopter_id = request.data.get('id')
+
+    try:
+        adopter = Adopter.objects.get(id=adopter_id)
+    except Adopter.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        user = User.objects.get(id=adopter.user_id)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    adopter_serializer = AdopterSerializer(adopter)
+    user_serializer = UserSerializer(user)
+
+    return Response({'Adopter Data': adopter_serializer.data, 'User Data': user_serializer.data},
+                    status=status.HTTP_200_OK)
+
+
+@api_view(['PUT'])
+def get_giver(request):
+    giver_id = request.data.get('id')
+
+    try:
+        giver = Giver.objects.get(id=giver_id)
+    except Giver.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        user = User.objects.get(id=giver.user_id)
+    except User.DoesNotExist:
+        return Response('User Not Found', status=status.HTTP_404_NOT_FOUND)
+
+    giver_serializer = GiverSerializer(giver)
+    user_serializer = UserSerializer(user)
+
+    return Response({'Giver Data': giver_serializer.data, 'User Data': user_serializer.data},
+                    status=status.HTTP_200_OK)
 
 
 
