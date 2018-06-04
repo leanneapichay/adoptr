@@ -13,6 +13,7 @@ class MatchPreviewViewController: UIViewController {
     
     private var userID: Int? = nil
     private var petID: Int? = nil
+    private var matchID: Int? = nil
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var petMatchLabel: UILabel!
@@ -39,21 +40,33 @@ class MatchPreviewViewController: UIViewController {
             print(response)
             if let userJSON = response.result.value{
                 if let petObj : Dictionary = userJSON as? Dictionary<String, Any> {
-                    petMatchLabel.text = "matched for : \(petObj["name"] as? String)"
+                    let petName: String = (petObj["name"] as? String)!
+                    self.petMatchLabel.text = "matched for : \(petName)"
                 }
             }
             
         }
         
     }
+    @IBAction func accept(_ sender: UIButton) {
+        Alamofire.request("\(SERVER_URL)/feed/accept/", method: .put, parameters: ["match-id":matchID!, "accepted":true])
+    }
+    
+    @IBAction func reject(_ sender: UIButton) {
+        Alamofire.request("\(SERVER_URL)/feed/accept/", method: .put, parameters: ["match-id":matchID!, "accepted":false])
+    }
+    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    public func setID(_ input: Int, _ inputPet: Int){
+    public func setID(_ input: Int, _ inputPet: Int, _ inputMatch: Int){
         userID = input
         petID = inputPet
+        matchID = inputMatch
+        
     }
 }

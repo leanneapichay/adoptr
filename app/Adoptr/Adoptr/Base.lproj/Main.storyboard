@@ -1195,11 +1195,17 @@
                                 <state key="normal" title="Reject" backgroundImage="OrangeBox">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reject:" destination="UU9-mo-2sQ" eventType="touchUpInside" id="ZOy-uV-BxN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBs-4x-NDc">
                                 <rect key="frame" x="205" y="522" width="135" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Accept" backgroundImage="OrangeBox"/>
+                                <connections>
+                                    <action selector="accept:" destination="UU9-mo-2sQ" eventType="touchUpInside" id="kr3-Ht-tGA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

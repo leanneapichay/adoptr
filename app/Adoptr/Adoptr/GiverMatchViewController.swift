@@ -15,6 +15,7 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
     private var elements: [Dictionary<String,Any>] = []
     private var adopterID = 0
     private var petID = 0
+    private var matchID = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,8 +55,9 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "matchCell") as! GiverMatchTableViewCell
         let index = indexPath.row
         cell.cellView.layer.cornerRadius = (cell.cellView.frame.height / 2)
-        adopterID = (elements[index]["adopter"] as? Int)!
-        cell.adoptName.text = getAdopter(adopterID)
+        var adopterIDloc = (elements[index]["adopter"] as? Int)!
+        matchID = (elements[index]["match"] as? Int)!
+        cell.adoptName.text = getAdopter(adopterIDloc)
         cell.petName.text = getPet((elements[index]["pet"] as? Int)!)
 
         return cell
@@ -68,6 +70,7 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
             if let userJSON = response.result.value{
                 if let userObj : Dictionary = userJSON as? Dictionary<String,Any> {
                     name = (userObj["first_name"] as? String)!
+                    
                 }
             }
         }
@@ -88,13 +91,14 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        adopterID = (elements[indexPath.row]["adopter"] as? Int)!
-        petID = (elements[indexPath.row]["pet"] as? Int)!
+        self.adopterID = (elements[indexPath.row]["adopter"] as? Int)!
+        self.petID = (elements[indexPath.row]["pet"] as? Int)!
+        self.matchID = (elements[indexPath.row]["pet"] as? Int)!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let receiver = segue.destination as! MatchPreviewViewController
-        receiver.setID(adopterID, petID)
+        receiver.setID(adopterID, petID, matchID)
         
     }
     
