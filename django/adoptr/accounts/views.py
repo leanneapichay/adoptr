@@ -157,7 +157,7 @@ def get_pets(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_adopter(request):
 
     adopter_id = request.data.get('id')
@@ -179,7 +179,7 @@ def get_adopter(request):
                     status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['PUT'])
 def get_giver(request):
     giver_id = request.data.get('id')
 
