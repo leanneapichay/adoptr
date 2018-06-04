@@ -20,7 +20,6 @@
 		B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */; };
 		B876F93920C1CB7F00EB62CA /* AdoptingInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */; };
 		B876F93B20C1F5B500EB62CA /* PreferenceChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */; };
-		B876F93D20C2190A00EB62CA /* AdoptingInputBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93C20C2190A00EB62CA /* AdoptingInputBViewController.swift */; };
 		B8AA6F0520AE88A2004F4905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */; };
 		B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA6F0620AE88A2004F4905 /* ViewController.swift */; };
 		B8AA6F0A20AE88A2004F4905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA6F0820AE88A2004F4905 /* Main.storyboard */; };
@@ -72,7 +71,6 @@
 		B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreviewViewController.swift; sourceTree = "<group>"; };
 		B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptingInputViewController.swift; sourceTree = "<group>"; };
 		B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceChangeViewController.swift; sourceTree = "<group>"; };
-		B876F93C20C2190A00EB62CA /* AdoptingInputBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptingInputBViewController.swift; sourceTree = "<group>"; };
 		B8AA6F0120AE88A2004F4905 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA6F0420AE88A2004F4905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AA6F0620AE88A2004F4905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */,
 				B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */,
 				B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */,
-				B876F93C20C2190A00EB62CA /* AdoptingInputBViewController.swift */,
 				B811E11A20C2495C00CDEBC5 /* AddPetViewController.swift */,
 				B811E11820C2495100CDEBC5 /* EditPetViewController.swift */,
 				B811E11C20C2793300CDEBC5 /* AcctSplitViewController.swift */,
@@ -438,7 +435,6 @@
 				B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */,
 				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
-				B876F93D20C2190A00EB62CA /* AdoptingInputBViewController.swift in Sources */,
 				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
 				B811E11B20C2495C00CDEBC5 /* AddPetViewController.swift in Sources */,
 				B811E11D20C2793300CDEBC5 /* AcctSplitViewController.swift in Sources */,

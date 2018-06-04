@@ -12,8 +12,9 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     
-    var date: String? = ""
-    var data: [String:String]? = nil
+    private var date: String? = ""
+    private var data: [String:String]? = nil
+    internal var nextPressed: Bool = false
     
     @IBOutlet weak var FirstNameField: UITextField?
     @IBOutlet weak var LastNameField: UITextField?
@@ -43,6 +44,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func NextButton(_ sender: Any) {
+        nextPressed = true
         let firstName = FirstNameField?.text
         let lastName = LastNameField?.text
         let birthdate = date
@@ -94,8 +96,10 @@ class SignUpViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let receiver = segue.destination as! AcctSplitViewController
-        receiver.setData(inputData: data!)
+        if(nextPressed){
+            let receiver = segue.destination as! AcctSplitViewController
+            receiver.setData(inputData: data!)
+        }
     }
 
 }

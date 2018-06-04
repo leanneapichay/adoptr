@@ -51,7 +51,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
 
  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    var upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
+    let upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
     
     let indexPath = self.tableView.indexPathsForSelectedRows
     

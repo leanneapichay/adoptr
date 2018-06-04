@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListedPetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,7 +23,9 @@ class ListedPetsViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        Alamofire.request("\(SERVER_URL)/accounts/get-pets/", method: .put, parameters: ["email":LoggedInEmail!], encoding: JSONEncoding.default).responseJSON{response in
+            print(response)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

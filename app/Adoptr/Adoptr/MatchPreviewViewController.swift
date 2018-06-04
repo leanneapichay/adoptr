@@ -22,12 +22,11 @@ class MatchPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var parameter: Parameters = ["id": userID!]
+        let parameter: Parameters = ["id": userID!]
         Alamofire.request("http://661aef61.ngrok.io/dogs/create-dog/", method: .post, parameters: parameter).responseJSON{ response in
             print(response)
             if let acctJSON = response.result.value{
                 let acctObj : Dictionary = acctJSON as! Dictionary<String, Any>
-                self
             }
         }
         

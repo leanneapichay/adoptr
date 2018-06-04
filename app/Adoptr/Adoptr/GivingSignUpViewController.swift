@@ -50,7 +50,7 @@ class GivingSignUpViewController: UIViewController {
             
             //adoption-centric info
             "independent" : !shelter,
-            "shelterName" : shelterName
+            "shelterName" : shelterName!
         ]
         Alamofire.request("\(SERVER_URL)/accounts/create-giver/", method: .post, parameters: parameters, encoding: JSONEncoding.default) .responseJSON{ response in
                 print(response)

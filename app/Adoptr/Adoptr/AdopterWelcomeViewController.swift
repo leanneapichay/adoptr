@@ -40,4 +40,8 @@ class AdopterWelcomeViewController: UIViewController {
         }
         
     }
+    @IBAction func logOut(_ sender: UIButton) {
+        LoggedInEmail = ""
+        performSegue(withIdentifier: "adopterLogOut", sender: self)
+    }
 }
