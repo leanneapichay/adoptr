@@ -7,54 +7,97 @@
 //
 
 import UIKit
+import Alamofire
 
 class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // change this to an array of pets from alamofire
-    private let elements = ["pet1","pet2","pet3"]
+    private var elements: [Dictionary<String,Any>] = []
+    private var adopterID = 0
+    private var petID = 0
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getElements
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        getElements()
     }
+    
     //ALAMOFIRE METHOD
     private func getElements(){
-        Alamofire.request("\(SERVER_URL)/feed/matches", method: .put, parameters: ["email":LoggedInEmail!], encoding: JSONEncoding.default).responseJSON{ response in
+        Alamofire.request("\(SERVER_URL)/feed/matches/", method: .put, parameters: ["email":LoggedInEmail], encoding: JSONEncoding.default).responseJSON{ response in
             print(response)
+            if let userJSON = response.result.value{
+                if let userObj : [Dictionary<String,Any>] = userJSON as? [ Dictionary<String, Any>] {
+                    self.elements = userObj
+                }
+       
+            }
         }
     }
 
-
+    
     
     
     //TABLE VIEW METHODS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elements.count
+        return self.elements.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listedCell") as! GiverMatchTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "matchCell") as! GiverMatchTableViewCell
+        let index = indexPath.row
         cell.cellView.layer.cornerRadius = (cell.cellView.frame.height / 2)
-        
+        adopterID = (elements[index]["adopter"] as? Int)!
+        cell.adoptName.text = getAdopter(adopterID)
+        cell.petName.text = getPet((elements[index]["pet"] as? Int)!)
+
         return cell
     }
     
-    //PREPARE FOR
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let upcoming : MatchPreviewViewController = segue.destination as! MatchPreviewViewController
-        
-        let indexPath = self.tableView.indexPathsForSelectedRows
-        
-        upcoming.setID(1)
+    private func getAdopter(_ input: Int) -> String{
+        var name: String = ""
+        Alamofire.request("\(SERVER_URL)/accounts/adopter-id/", method: .put, parameters: ["id":input], encoding: JSONEncoding.default).responseJSON{ response in
+            print(response)
+            if let userJSON = response.result.value{
+                if let userObj : Dictionary = userJSON as? Dictionary<String,Any> {
+                    name = (userObj["first_name"] as? String)!
+                }
+            }
+        }
+        return name
     }
+    
+    private func getPet(_ input: Int) -> String{
+        var name: String = ""
+        Alamofire.request("\(SERVER_URL)/dogs/dog-info/", method: .put, parameters: ["id":input], encoding: JSONEncoding.default).responseJSON{ response in
+            print(response)
+            if let userJSON = response.result.value{
+                if let userObj : Dictionary = userJSON as? Dictionary<String,Any> {
+                    name = (userObj["name"] as? String)!
+                }
+            }
+        }
+        return name
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        adopterID = (elements[indexPath.row]["adopter"] as? Int)!
+        petID = (elements[indexPath.row]["pet"] as? Int)!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let receiver = segue.destination as! MatchPreviewViewController
+        receiver.setID(adopterID, petID)
+        
+    }
+    
+    
 
 }

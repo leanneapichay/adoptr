@@ -11,8 +11,9 @@ import Alamofire
 
 class GiverWelcomeViewController: UIViewController {
 
-    
     @IBOutlet weak var nameLabel: UILabel!
+    private var listing = false
+    private var ID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,27 @@ class GiverWelcomeViewController: UIViewController {
                 if let userObj : Dictionary = userJSON as? Dictionary<String, Any> {
                     let adopterObj: Dictionary = userObj["Giver Data"] as! Dictionary<String, Any>
                     self.nameLabel.text = adopterObj["first_name"]! as? String
+                    self.ID = adopterObj["id"]! as! Int
                     print(adopterObj["first_name"]!)
                 }
             }
         }
         
     }
-
+    @IBAction func listingPet(_ sender: Any) {
+        listing = true
+        performSegue(withIdentifier: "listing", sender: self)
+    }
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        LoggedInEmail = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(listing){
+            let receiving = segue.destination as! AddPetViewController
+            print(ID)
+            receiving.setID(ID)
+        }
+    }
 }

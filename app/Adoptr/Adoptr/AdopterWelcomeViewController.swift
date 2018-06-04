@@ -16,6 +16,7 @@ class AdopterWelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         changeName()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +24,7 @@ class AdopterWelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func changeName(){
+    internal func changeName(){
         print(LoggedInEmail!)
         let parameters: Parameters = ["email": LoggedInEmail!]
         let url = SERVER_URL + "/accounts/adopter-data/"
@@ -44,4 +45,6 @@ class AdopterWelcomeViewController: UIViewController {
         LoggedInEmail = ""
         performSegue(withIdentifier: "adopterLogOut", sender: self)
     }
+    
+   
 }

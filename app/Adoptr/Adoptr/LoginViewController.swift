@@ -9,8 +9,8 @@
 import UIKit
 import Alamofire
 
-public var LoggedInEmail : String? = nil
-public let SERVER_URL: String = "http://andrewsong17.pythonanywhere.com"
+internal var LoggedInEmail : String? = nil
+internal let SERVER_URL: String = "http://andrewsong17.pythonanywhere.com"
 
 class LoginViewController: UIViewController {
     

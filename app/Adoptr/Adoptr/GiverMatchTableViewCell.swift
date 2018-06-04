@@ -10,6 +10,10 @@ import UIKit
 
 class GiverMatchTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var adoptName: UILabel!
+    @IBOutlet weak var petName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +24,4 @@ class GiverMatchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

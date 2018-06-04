@@ -11,6 +11,8 @@ import Alamofire
 
 class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    private var ownerID = 0
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var breedField: UITextField!
     
@@ -90,7 +92,7 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             trainedOn = true
         }
         let size: Int = sizePicker.selectedRow(inComponent: 0)
-
+        print(ownerID)
         
         let parameters: Parameters = [
             "name": nameField.text!,
@@ -102,16 +104,21 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             "hypoallergenic": hypoSwitch.isOn,
             "size": size,
             "description" : bioField.text!,
-            "owner": 1
+            "owner": ownerID
         ]
 
-        Alamofire.request("\(SERVER_URL)/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(SERVER_URL)/dogs/create-dog/", method: .post, parameters: parameters, encoding: JSONEncoding.default).response{ response in
+            print(response)
+        }
         self.createAlert(title: "Success", message: "Your pet has been listed")
         
         performSegue(withIdentifier: "returnToMenu", sender: self)
     }
     
-
+    public func setID(_ input: Int){
+        ownerID = input
+    }
+    
     func createAlert(title:String, message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         //creating a button
