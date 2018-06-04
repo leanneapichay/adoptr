@@ -892,6 +892,7 @@
                         <viewLayoutGuide key="safeArea" id="Fv6-0v-Brt"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="OPG-b5-4zw" id="AMX-ha-n8m"/>
                         <segue destination="0Lp-jK-fns" kind="show" identifier="showPetView" id="PKd-Kd-ctA"/>
                     </connections>
                 </viewController>

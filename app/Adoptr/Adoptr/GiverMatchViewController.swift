@@ -17,7 +17,7 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getElements
         
     }
     //ALAMOFIRE METHOD
@@ -41,7 +41,7 @@ class GiverMatchViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listedCell") as! AdopterMatchTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listedCell") as! GiverMatchTableViewCell
         
         cell.cellView.layer.cornerRadius = (cell.cellView.frame.height / 2)
         
