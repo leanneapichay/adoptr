@@ -10,5 +10,5 @@ urlpatterns = [
     path('account-type/', views.get_account_type),
     path('get-pets/', views.get_pets),
     path('adopter-id/', views.get_adopter),
-    path('giver-id', views.get_giver),
+    path('giver-id/', views.get_giver),
 ]
