@@ -8,12 +8,11 @@
 
 import UIKit
 
-class MatchTableViewCell: UITableViewCell {
+class AdopterMatchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var ownerImage: UIImageView!
     @IBOutlet weak var ownerName: UILabel!
-    
+    @IBOutlet weak var breedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

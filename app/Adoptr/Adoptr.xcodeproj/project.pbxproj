@@ -15,8 +15,8 @@
 		B815F82E20B5BE66004F5943 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815F82D20B5BE66004F5943 /* SignUpViewController.swift */; };
 		B86E1ABB20C371BE00F540E9 /* AdopterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E1ABA20C371BE00F540E9 /* AdopterWelcomeViewController.swift */; };
 		B86E1ABD20C371CC00F540E9 /* GiverWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E1ABC20C371CC00F540E9 /* GiverWelcomeViewController.swift */; };
-		B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */; };
-		B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* MatchViewController.swift */; };
+		B876F93320BFABFE00EB62CA /* AdopterMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93220BFABFE00EB62CA /* AdopterMatchTableViewCell.swift */; };
+		B876F93520BFAC4200EB62CA /* AdopterMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93420BFAC4200EB62CA /* AdopterMatchViewController.swift */; };
 		B876F93720BFBCCB00EB62CA /* MatchPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */; };
 		B876F93920C1CB7F00EB62CA /* AdoptingInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */; };
 		B876F93B20C1F5B500EB62CA /* PreferenceChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */; };
@@ -34,6 +34,8 @@
 		B8F1E8FF20BE432D0043ED71 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */; };
 		B8F1E90B20BF46DC0043ED71 /* ListedPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */; };
 		B8F1E90E20BF4A0D0043ED71 /* ListedPetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */; };
+		B8F1F34220C50ED70033112B /* GiverMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1F34120C50ED70033112B /* GiverMatchViewController.swift */; };
+		B8F1F34420C50EEC0033112B /* GiverMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1F34320C50EEC0033112B /* GiverMatchTableViewCell.swift */; };
 		BA1C21C24D5EEA50BD1F0BDA /* Pods_AdoptrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E3715995EEDA0C8B75AAE2 /* Pods_AdoptrTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +68,8 @@
 		B815F82D20B5BE66004F5943 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B86E1ABA20C371BE00F540E9 /* AdopterWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdopterWelcomeViewController.swift; sourceTree = "<group>"; };
 		B86E1ABC20C371CC00F540E9 /* GiverWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiverWelcomeViewController.swift; sourceTree = "<group>"; };
-		B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
-		B876F93420BFAC4200EB62CA /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		B876F93220BFABFE00EB62CA /* AdopterMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdopterMatchTableViewCell.swift; sourceTree = "<group>"; };
+		B876F93420BFAC4200EB62CA /* AdopterMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdopterMatchViewController.swift; sourceTree = "<group>"; };
 		B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreviewViewController.swift; sourceTree = "<group>"; };
 		B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptingInputViewController.swift; sourceTree = "<group>"; };
 		B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceChangeViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,8 @@
 		B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedPetsViewController.swift; sourceTree = "<group>"; };
 		B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedPetViewCell.swift; sourceTree = "<group>"; };
+		B8F1F34120C50ED70033112B /* GiverMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiverMatchViewController.swift; sourceTree = "<group>"; };
+		B8F1F34320C50EEC0033112B /* GiverMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiverMatchTableViewCell.swift; sourceTree = "<group>"; };
 		C3E3715995EEDA0C8B75AAE2 /* Pods_AdoptrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdoptrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03AEE0A5A2AE9BF299E751F /* Pods-AdoptrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdoptrTests/Pods-AdoptrTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAB8C11E6E1E5EA4C7FC14D3 /* Pods_Adoptr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adoptr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,8 +187,10 @@
 				B8F1E8FE20BE432D0043ED71 /* FeedViewController.swift */,
 				B8F1E90A20BF46DC0043ED71 /* ListedPetsViewController.swift */,
 				B8F1E90D20BF4A0D0043ED71 /* ListedPetViewCell.swift */,
-				B876F93220BFABFE00EB62CA /* MatchTableViewCell.swift */,
-				B876F93420BFAC4200EB62CA /* MatchViewController.swift */,
+				B876F93220BFABFE00EB62CA /* AdopterMatchTableViewCell.swift */,
+				B876F93420BFAC4200EB62CA /* AdopterMatchViewController.swift */,
+				B8F1F34320C50EEC0033112B /* GiverMatchTableViewCell.swift */,
+				B8F1F34120C50ED70033112B /* GiverMatchViewController.swift */,
 				B876F93620BFBCCB00EB62CA /* MatchPreviewViewController.swift */,
 				B876F93820C1CB7F00EB62CA /* AdoptingInputViewController.swift */,
 				B876F93A20C1F5B500EB62CA /* PreferenceChangeViewController.swift */,
@@ -431,8 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B876F93520BFAC4200EB62CA /* MatchViewController.swift in Sources */,
-				B876F93320BFABFE00EB62CA /* MatchTableViewCell.swift in Sources */,
+				B8F1F34220C50ED70033112B /* GiverMatchViewController.swift in Sources */,
+				B876F93520BFAC4200EB62CA /* AdopterMatchViewController.swift in Sources */,
+				B876F93320BFABFE00EB62CA /* AdopterMatchTableViewCell.swift in Sources */,
 				B8AA6F3C20AF2114004F4905 /* PageViewController.swift in Sources */,
 				B8AA6F0720AE88A2004F4905 /* ViewController.swift in Sources */,
 				B8C4C8C520B87A9100D5A9CB /* GivingSignUpViewController.swift in Sources */,
@@ -443,6 +450,7 @@
 				B811E11920C2495100CDEBC5 /* EditPetViewController.swift in Sources */,
 				B86E1ABB20C371BE00F540E9 /* AdopterWelcomeViewController.swift in Sources */,
 				B8F1E90E20BF4A0D0043ED71 /* ListedPetViewCell.swift in Sources */,
+				B8F1F34420C50EEC0033112B /* GiverMatchTableViewCell.swift in Sources */,
 				B8C157C120B3C21A005A9334 /* Accounts.swift in Sources */,
 				B86E1ABD20C371CC00F540E9 /* GiverWelcomeViewController.swift in Sources */,
 				B8C157C920B4A2DF005A9334 /* LoginViewController.swift in Sources */,
