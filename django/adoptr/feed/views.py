@@ -15,7 +15,7 @@ def feed(request):
     email = request.data.get('email')  # can change to tokens
     num = request.data.get('num')
 
-    # Can use nosql db to get list of declined dogs for each user so that feed can remember
+    # Can create new table to keep track of yes's and no's in a server w/ 2 FK's
 
     try:
         user = User.objects.get(email=email)

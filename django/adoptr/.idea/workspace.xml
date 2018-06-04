@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="378c91df-9a05-4e75-8cbc-8c38543887e4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="122" column="44" lean-forward="true" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -449,14 +447,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528058264250</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="changed get pets">
+      <created>1528062774246</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1528062774246</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50625" side_tool="true" weight="0.328125" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49375" weight="0.328125" />
@@ -479,7 +484,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added foreign key to dogs and more fields to shelters" />
     <MESSAGE value="added serializer for shelters" />
     <MESSAGE value="added serializer for dogs" />
     <MESSAGE value="added installed apps" />
@@ -504,7 +508,8 @@
     <MESSAGE value="changed dog foreign key owner from User to Giver" />
     <MESSAGE value="generalized get matches and complete matches" />
     <MESSAGE value="fixed accepting matches" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed accepting matches" />
+    <MESSAGE value="changed get pets" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed get pets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -921,8 +926,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+        <state relative-caret-position="51">
+          <caret line="122" column="44" lean-forward="true" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
